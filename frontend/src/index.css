@@ -1,0 +1,37 @@
+.qat_logo{
+  width:100px;
+  height:50px;
+}
+.image-stack {
+  height: 500px;
+  overflow: hidden;
+}
+
+.angled-image {
+  position: absolute;
+  width: 100%;
+  transform-origin: center;
+  clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+  overflow: hidden;
+}
+
+.image-1 {
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.image-2 {
+  top: 50px;
+  left: 30px;
+  z-index: 2;
+}
+
+.image-3 {
+  top: 100px;
+  left: 60px;
+  z-index: 3;
+}
+.bg1{
+  background-image: url('bg1.png');
+}
