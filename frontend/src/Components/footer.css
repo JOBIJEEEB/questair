@@ -1,0 +1,25 @@
+.ft {
+    background-color: #063A83;
+    font-weight: 500;
+}
+
+.custom-img {
+  height: 115.17;
+  width: 228px;
+}
+
+@media (max-width: 700px) {
+  .custom-img {
+  transform: scale(0.7); 
+ }
+
+ .ftext{
+  font-size: x-small;
+ }
+}
+
+.link-text {
+  text-decoration: none;
+  color: white;
+  text-align: start;
+}

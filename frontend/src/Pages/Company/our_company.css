@@ -1,0 +1,242 @@
+
+.bg {
+  height: auto;
+  background: linear-gradient(#063A83, rgba(0, 0, 0, 0.406)), url('./questairbg.png');
+  background-size: cover; 
+  background-position: center;
+  color: white;
+}
+
+.ind{
+  background: linear-gradient(rgba(0, 0, 0, 0.768), rgba(0, 0, 0, 0.7)), url('./industrial.png');
+  background-size: cover;
+  background-position: center;
+  font-weight: bold;
+  color: #3B81E6;
+}
+
+.rsd{
+  background: linear-gradient(rgba(0, 0, 0, 0.768), rgba(0, 0, 0, 0.7)), url('./residential.png');
+  background-size: cover;
+  background-position: center;
+  font-weight: bold;
+  color: #3B81E6;
+}
+
+.comm{
+  background: linear-gradient(rgba(0, 0, 0, 0.768), rgba(0, 0, 0, 0.7)), url('./commercial.png');
+  background-size: cover;
+  background-position: center;
+  font-weight: bold;
+  color: #3B81E6;
+}
+
+.comm:hover{
+  background: linear-gradient(rgba(0, 4, 20, 0.468), rgba(1, 31, 69, 0.7)), url('./commercial.png');
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.03);
+  transition: 0.1s ease-in-out;
+}
+
+
+.ind:hover{
+  background: linear-gradient(rgba(0, 4, 20, 0.468), rgba(1, 31, 69, 0.7)), url('./industrial.png');
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.03);
+  transition: 0.1s ease-in-out;
+}
+
+.rsd:hover{
+  background: linear-gradient(rgba(0, 4, 20, 0.468), rgba(1, 31, 69, 0.7)), url('./residential.png');
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.03);
+  transition: 0.1s ease-in-out;
+}
+
+.who {
+  font-size: 50px;
+  color: aliceblue;
+  border: 7px solid;
+  border-color:#3B81E6;
+  font-weight: 800;
+}
+
+
+.wh-text {
+  font-style: italic;
+}
+
+.vision, .mission {
+  background-color: #3B81E6;
+}
+
+.vt1 {
+  color: #3B81E6;
+  font-size: 40px;
+}
+
+.vt {
+  color: #3B81E6;
+}
+
+.title {
+  color: #3B81E6;
+  font-weight: bolder;
+}
+
+.subtexts{
+  color: #3B81E6;
+  font-weight: 500;
+}
+
+.mrkt {
+  color: #3B81E6;
+  font-weight: 500;
+}
+
+.main-title {
+  color: #3B81E6;
+  font-weight: bolder;
+}
+
+.core-values {
+  border: 10px solid #3B81E6;
+  background-color: #ffffff;
+}
+
+.core-values-box {
+  border: 5px solid #3B81E6;
+  height: 100%;
+  padding: 24px;
+}
+
+
+
+
+.vs:hover, .ms:hover {
+  transform: scale(1.03);
+  transition: 0.1s ease-in-out;
+}
+
+.texts:hover{
+  transform: scale(1.05);
+  transition: 0.1s ease-in-out;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.01s;
+}
+
+.fade-in-down {
+  opacity: 0;
+  animation: fadeInDown 1s ease-out forwards;
+  animation-delay: 0.01s;
+}
+
+.vs {
+  padding: 0.7em;
+  color: #3B81E6;
+  background-color: #3B81E6;
+}
+
+.ms {
+  padding: 0.7em;
+  color: #3B81E6;
+  background-color: #3B81E6;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-17px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@media (max-width: 700px) {
+  body {
+    background-color: rgb(255, 255, 255);
+  }
+
+  .vs{
+    transform: scale(0.90);
+  }
+
+  .wh-text2 {
+    font-size: smaller;
+    font-size: 10px;
+    font-weight: 500;
+    font-style: italic;
+  }
+
+  .ms{
+    transform: scale(0.90);
+    font-size: 8px;
+  }
+
+  .title-vs{
+    font-size: 19px;
+  }
+
+  .subtexts-vs {
+    font-size: 9px;
+  }
+
+  .core-values {
+    border: 5px solid #3B81E6;
+    transform: scale(0.90);
+    margin-top: -30px;
+    margin-bottom: -45px;
+  }
+  .core-values-box {
+    border: 5px solid #3B81E6;
+    transform: scale(0.94);
+    padding: 0px;
+    margin: px;
+  }
+
+  .texts {
+    font-size: smaller;
+  
+  }
+
+  .title {
+    padding-top: 6px;
+    font-size: medium;
+  }
+
+  .subtexts {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .who {
+   font-size: large;
+  }
+  
+}
+
+
+
+
+

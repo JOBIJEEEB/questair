@@ -1,0 +1,71 @@
+.navbar {
+    z-index: 1000;
+    background-color:#083c84;
+}
+.navbar-toggler-icon {
+    background-image: url("./burger.png");
+}
+
+.navbar-toggler-icon:focus {
+    filter: brightness(0) invert(1);
+    background-image: url("./burger.png");
+    border: white;
+}
+
+.navbar-toggler:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.1rem white;
+}
+
+.navbar-toggler {
+  outline: 0;
+  box-shadow: 0 0 0 0.0 rgba(255, 255, 255, 0);
+}
+
+
+.ctcbtn{
+    background-color: #3b81e6;
+}
+
+.ctcbtn:hover{
+    background-color: rgb(45, 108, 245);
+}
+
+
+.nav-link {
+    color: white;
+}
+
+.nav-link:hover {
+    color: #3eb8ff;
+}
+
+
+.active {
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    text-decoration:underline;
+    font-weight: bolder;
+    text-decoration: underline;
+    text-decoration-thickness: 3px; 
+    text-underline-offset: 30px;
+}
+
+.qat_logo {
+ height: 58px;
+ width: 115px;
+}
+
+@media (max-width: 700px) {
+  .active {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    font-weight: bolder;
+    /* text-decoration: underline;
+    text-decoration-thickness: 2px; 
+    text-underline-offset: 6px;    */
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.318); 
+    border-radius: 4px; 
+}
+}

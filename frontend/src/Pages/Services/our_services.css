@@ -1,0 +1,47 @@
+
+.main {
+    color: #3B81E6;
+}
+
+.text {
+  font-style: italic;
+  font-size: large;
+  font-weight: 500;
+}
+
+.anm {
+  border-radius: 25px;
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.1);
+  background: rgb(252, 251, 249);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background 0.2s ease-in-out;
+  will-change: transform;
+}
+
+.anm:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  background: #ffffff; 
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(17px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-17px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

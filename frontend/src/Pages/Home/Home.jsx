@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
-import { Link } from 'react-router-dom';
-import Navbar from './Navbar';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import Navbar from '../../Components/Navbar';
+import './home.css';
 
 function Home(){
     const [data, setData] = useState([])
