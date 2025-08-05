@@ -21,7 +21,7 @@ const images = [
 const Career = () => {
   return (
     <> 
-      <div className="bg">
+      <div className="hero">
         <Navbar />
         <div className="first container text-white text-center pt-5 py-5 px-md-2">
             <div className="who-box m-md-5 m-1">
@@ -31,13 +31,13 @@ const Career = () => {
       </div>
 
       {/* CAROUSEL */}
-      <div className="container fade-in bg-white mt-4 mb-3 px-5 pb-2">
+      <div className="container-fluid fade-in bg-white p-md-5 px-4 pt-3 ">
         <div className="row justify-content-center">
-          {/* <div id="carouselExampleIndicators" className="carousel slide px-0" data-bs-ride="carousel" data-bs-interval ="5000">
+          {/* <div id="carouselIndicators" className="carousel slide px-0" data-bs-ride="carousel" data-bs-interval ="5000">
               <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
               </div>
               <div class="carousel-inner">
                   <div class="carousel-item active">
@@ -84,22 +84,22 @@ const Career = () => {
 
                      
               </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicators" data-bs-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                   <span class="visually-hidden">Previous</span>
               </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselIndicators" data-bs-slide="next">
                   <span class="carousel-control-next-icon" aria-hidden="true"></span>
                   <span class="visually-hidden">Next</span>
               </button>
           </div>    */}
-              <div id="carouselExampleIndicators" className="col-md-10 col-12 carousel slide px-0" data-bs-ride="carousel" data-bs-interval="3000">
+              <div id="carouselIndicators" className="col-md-8 col-12 carousel slide px-0" data-bs-ride="carousel" data-bs-interval="3000">
                 <div className="carousel-indicators">
                   {images.map((_, i) => (
                     <button
                       key={i}
                       type="button"
-                      data-bs-target="#carouselExampleIndicators"
+                      data-bs-target="#carouselIndicators"
                       data-bs-slide-to={i}
                       className={i === 0 ? 'active' : ''}
                       aria-current={i === 0 ? 'true' : undefined}
@@ -114,38 +114,40 @@ const Career = () => {
                     </div>
                   ))}
                 </div>
-                <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <button className="carousel-control-prev" type="button" data-bs-target="#carouselIndicators" data-bs-slide="prev">
                   <span className="carousel-control-prev-icon" aria-hidden="true" />
                   <span className="visually-hidden">Previous</span>
                 </button>
-                <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <button className="carousel-control-next" type="button" data-bs-target="#carouselIndicators" data-bs-slide="next">
                   <span className="carousel-control-next-icon" aria-hidden="true" />
                   <span className="visually-hidden">Next</span>
                 </button>
               </div>
-              <div className="col-md-10 col-12  text-start text-white head">
-                  <h1 className='fw-bold pt-3'>START YOUR CAREER WITH US!</h1> <hr />
-                  <p className='text-white text-justify'>The heart of our company has always been the exceptional people who
+              <div className="col-md-8 col-12 text-start text-white head">
+                  <h1 className='fw-bold pt-3 px-2'>START YOUR CAREER WITH US!</h1> <hr />
+                  <p className='text-white text-justify px-2'>The heart of our company has always been the exceptional people who
                     strive hard work for the success of the company. We believe in
                     motivated and passionate people to deliver better services to our clients.
                     </p>
               </div>        
         </div>
-
       </div>
-
+              
       {/* TEXT */}
-      <div className="container pb-4 pt-4">
-        <div className="row pb-5">
-          <div className="col">
+      <div className="container-fluid bg-white pb-4 pt-4">
+        <div className="row pb-5 d-flex justify-content-center">
+          <div className="col-12">
             <h3 className='fw-bold main-title'>BE PART OF A COMPANY WHO OFFERS GROWTH</h3>
-              <p className='text-muted pt-1'>You may email your resume to <b>hrd_admin@questair.com.ph </b> 
+           </div>  
+            <div className="col-12 col-md-8">
+              <p className='text-muted text-justify pt-1'>You may email your resume to <b>hrd_admin@questair.com.ph </b> 
                 or you can drop your resume at our main office located at <b>Lot 7-A Sooner Farm Compound,
                 Brgy. Timbao, Biñan, Laguna.</b></p> 
-            <a className='text-white fw-bold btn btn-primary' href = "mailto:hrd_admin@questair.com.ph" target ="_blank">
-              Send us your resume here! 
-              </a>
-          </div>
+              <a className='text-white fw-bold btn btn-primary' href = "mailto:hrd_admin@questair.com.ph" target ="_blank">
+                Send us your resume here! 
+                </a>
+            </div>
+              
         </div>
       </div>
 

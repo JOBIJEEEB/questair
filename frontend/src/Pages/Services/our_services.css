@@ -15,6 +15,7 @@
   background: rgb(252, 251, 249);
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background 0.2s ease-in-out;
   will-change: transform;
+  padding: 30px;
 }
 
 .anm:hover {
@@ -23,25 +24,11 @@
   background: #ffffff; 
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(17px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
-@keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-17px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+/* @media (max-height: 768px){
 
+  .services {
+    scale: 0.6;
+  }
+
+} */

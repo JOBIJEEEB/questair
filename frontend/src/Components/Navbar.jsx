@@ -23,6 +23,7 @@ const Navbar = () => {
                 <span className="navbar-toggler-icon"></span>
               </button>
               <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                
                   <ul className="navbar-nav mx-auto mb-3 mb-lg-0 d-flex gap-md-5 gap-0 pt-md-0 pt-3">
                       <li className="nav-item">
                         <Link className={"nav-link" + (url === "/home" ?" active" : "")} aria-current="page" to="/home">Home</Link>
@@ -51,11 +52,11 @@ const Navbar = () => {
                     </ul>
                 
 
-                    <form className="d-flex justify-content-center mb-3 mb-md-0">
+                    {/* <div className="d-flex justify-content-center mb-3 mb-md-0">
                       <button className="ctcbtn btn text-white px-4" type="button">
                         <Link className={"nav-link" + (url === "/contact" ?"" : "")} to="/contact">Contact</Link>
                         </button>
-                    </form>
+                    </div> */}
                       
                   </div>
           </div>

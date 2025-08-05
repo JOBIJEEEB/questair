@@ -5,9 +5,12 @@ import './contact.css'
 const Contact = () => {
   return (
     <> 
-    <section className="bg">
+    <div>
+        
+    </div>
+    <section className="hero">
         <Navbar />
-        <div className="container text-white text-center pt-5 py-5 px-md-2">
+        <div className="container text-white text-center pt-5 py-3 px-md-2">
             <div className="who-box m-5">
                 <h1 className="who fade-in-down p-3">CONTACT US</h1>
                 <p className="text fade-in m-3 pt-3">
@@ -17,7 +20,7 @@ const Contact = () => {
         </div>
     </section>
 
-    <section className="container-fluid pt-md-5 pt-sm-3 mb-5">
+    <section className="container-fluid pt-md-5 pt-sm-3 pb-5 bg-white">
         <div className="row px-md-0 px-4 justify-content-center">
             {/* Contact Form */}
             <section className="left col-md-4 col-sm-12 ">
@@ -94,7 +97,7 @@ const Contact = () => {
                         <div className="col bg-white mt-5 mb-4 px-3">
                         <div className="row one justify-content-center gap-5">
                         
-                            <div className="col-md-5 col anm">
+                            <div className="col-md-5 col cards">
                                 <div className="row justify-content-start px-5 pt-4">
                                 <img src="./sales.png" className="w-25 rounded-circle" alt="sales"></img>
                                 </div>
@@ -115,7 +118,7 @@ const Contact = () => {
                                 </div>
                             </div>
 
-                            <div className="col-md-5 col anm">
+                            <div className="col-md-5 col cards">
                                 <div className="row justify-content-start px-5 pt-4">
                                 <img src="./support.png" className="w-25 rounded-circle" alt="support"></img>
                                 </div>

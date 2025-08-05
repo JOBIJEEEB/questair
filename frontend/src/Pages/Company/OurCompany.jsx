@@ -5,13 +5,12 @@ import './our_company.css'
 const OurCompany = () => {
   return (
     <> 
-      <div className="bg">
+      <div className="hero">
       <Navbar />      
-        <div className="first container text-center pt-5 py-5 px-md-2">
-          
+        <div className="first container text-center pt-5 py-3 px-md-2">
             <div className="who-box m-md-5 m-1">
                 <h2 className="who fade-in-down p-3">WHO WE ARE</h2>
-                <h6 className="wh-text fade-in m-3 pt-3 d-none d-md-block">
+                <h6 className="wh-text fade-in pt-3 d-none d-md-block">
                     Quest-Air Technology Phils, Inc. (QAT) is dynamic & progressive construction company whose core competencies are in Mechanical Airconditioning & Ventilation, Electrical
                     Distribution & Ancillaries, Fire Protection Systems & Plumbing Works. We are an acknowledged leader in Cleanroom Design and Construction.
                 </h6>
@@ -20,56 +19,66 @@ const OurCompany = () => {
       </div>
 
       {/* VISION MISSION CORE VALUES*/}
-      <div className="second container pt-md-5 px-md-2">
+      <div className="second container-fluid pt-md-5 px-md-2 bg-white">
         <p className="wh-text2 fade-in m-3 pt-2 d-block d-md-none">
                     Quest-Air Technology Phils, Inc. (QAT) is dynamic & progressive construction company whose core competencies are in Mechanical Airconditioning & Ventilation, Electrical
                     Distribution & Ancillaries, Fire Protection Systems & Plumbing Works. We are an acknowledged leader in Cleanroom Design and Construction.
                 </p>
 
         {/* VISION */}
-        <div className="vs row mb-md-5">
-          <div className="col-3 d-flex justify-content-center align-items-center">
-            <div className="bulb">
-              <img src="./bulb.png" alt="Bulb" className="object-fit-contain img-fluid"/>
-            </div>
-          </div>
-          <div className="col-9 bg-white">
-            <div className="vs-texts text-start align-items-center">
-              <h1 className='title-vs fw-bolder mt-3'>OUR VISION</h1>
-              <h4 className='subtexts-vs fw-bold'>
-                  WE BELIEVE IN WORKING TOGETHER TO ACHIEVE
-                  SUSTAINABLE AND RELIABLE DEVELOPMENTS BY YEAR
-                  2027 FOR THE CONSTRUCTION INDUSTRY ENSURING
-                  CORPORATE SOCIAL RESPONSIBILITY.
-              </h4>
+        <div className="row justify-content-center mb-md-5">
+          <div className="col-md-8">
+            <div className="vs row px-md-3 px-2 py-md-3 py-2">
+
+              <div className="col-2 justify-content-center d-flex align-items-center">
+                <img src="./bulb.png" alt="Bulb" className="object-fit-contain img-fluid"/>
+              </div>
+
+              <div className="col-10 bg-white d-flex align-items-center">
+                <div className="vs-texts px-md-5 px-0 pt-1 text-start">
+                  <h1 className='title-vs fw-bolder'>OUR VISION</h1>
+                  <h4 className='subtexts-vms fw-bold text-justify'>
+                      WE BELIEVE IN WORKING TOGETHER TO ACHIEVE SUSTAINABLE AND RELIABLE DEVELOPMENTS BY YEAR
+                      2027 FOR THE CONSTRUCTION INDUSTRY ENSURING CORPORATE SOCIAL RESPONSIBILITY.
+                  </h4>
+                </div>
+              </div> 
+
             </div>
           </div>
         </div>
 
         {/* MISSION */}
-        <div className="ms row mb-md-5">
-          <div className="col-9 bg-white">
-            <div className="ms-texts text-start align-items-center">
-              <h1 className='title-vs fw-bolder mt-3'>OUR MISSION</h1>
-                <h4 className='subtexts-vs fw-bold mb-3'>
-                    WE SHALL BE A PROFESSIONAL ENGINEERING AND CONSTRUCTION COMPANY WHO VALUE THE TRUST AND
-                    CONFIDENCE OF OUR CUSTOMERS. WE COMMIT OURSELVES TO DELIVER OUR PRODUCTS AND SERVICES
-                    SAFELY, ON-TIME AND WITH HIGH QUALITY. WE WILL ASSURE TO PROVIDE A FAIR RETURN TO OUR
-                    STOCKHOLDERS.
-                </h4>
+        <div className="row justify-content-center mb-md-5">
+          <div className="col-md-8">
+            <div className="ms row px-md-3 px-2 vs py-md-3 py-2">
+              <div className="col-10 bg-white d-flex align-items-center">
+                  <div className="vs-texts px-md-5 px-0 pt-md-2 text-start">
+                    <h1 className='title-vs fw-bolder'>OUR MISSION</h1>
+                    <h4 className='subtexts-vms fw-bold text-justify pb-md-2'>
+                        WE SHALL BE A PROFESSIONAL ENGINEERING AND CONSTRUCTION COMPANY WHO VALUE THE TRUST AND
+                        CONFIDENCE OF OUR CUSTOMERS. WE COMMIT OURSELVES TO DELIVER OUR PRODUCTS AND SERVICES
+                        SAFELY, ON-TIME AND WITH HIGH QUALITY. WE WILL ASSURE TO PROVIDE A FAIR RETURN TO OUR
+                        STOCKHOLDERS.
+                    </h4>
+                  </div>
+              </div> 
+
+              <div className="col-2 justify-content-center d-flex align-items-center">
+                <img src="./gear.png" alt="Bulb" className="object-fit-contain img-fluid"/>
+              </div>
+
             </div>
+             
+              
           </div>
-          <div className="col-3 d-flex justify-content-center align-items-center">
-            <div className="gear">
-              <img src="./gear.png" alt="Gear" className="object-fit-contain img-fluid"/>
-            </div>
-          </div>        
         </div>
 
       {/* CORE VALUES */}
-        <div className="core-values row justify-content-center">
-              <div className="line1 row g-md-3 g-1 text-center align-items-md-start align-items-start">
-                <h1 className="main-title">
+        <div className="row justify-content-center">
+          <div className="core-values col-md-8 mb-md-3 gx-md-5 gx-0 ">
+              <div className="line1 row g-md-3 text-center align-items-md-start align-items-start">
+                <h1 className="main-title pt-2">
                   CORE VALUES
                 </h1>
                 <div className="col-12 col-md-4">
@@ -85,7 +94,7 @@ const OurCompany = () => {
                   <div className="core-values-box">
                     <div className="texts py-md-4 py-0">
                       <h5 className="title">ACCOUNTABILITY</h5>
-                      <p className="subtexts">We assume responsibility of our actions and decisions.</p>
+                      <p className="subtexts">We assume responsibility of<br></br> our actions and decisions.</p>
                     </div>
                   </div>
                 </div>
@@ -100,7 +109,7 @@ const OurCompany = () => {
                 </div>
               </div>
 
-              <div className="line2 row g-md-3 g-1 justify-content-center">
+              <div className="line2 row g-md-3 pt-md-3 justify-content-center">
                 <div className="col-12 col-md-4">
                   <div className="core-values-box">
                     <div className="texts py-md-4 py-0">
@@ -128,7 +137,7 @@ const OurCompany = () => {
                 </div>
               </div>
                 
-              <div className="line3 row g-md-3 g-1 mb-3 justify-content-center">
+              <div className="line3 row g-md-3 pt-md-3 pb-md-4 pb-3 justify-content-center">
                 <div className="col-12 col-md-4">
                   <div className="core-values-box">
                       <div className="texts py-md-4 py-0">
@@ -147,11 +156,13 @@ const OurCompany = () => {
                     </div>
                 </div>  
               </div>
+          </div>
+            
         </div>
       </div>
 
       {/* OUR MARKET */}
-      <div className="container text-center mt-3">
+      <div className="third container-fluid text-center pt-5 pb-4 pb-md-5">
           <div className="row align-items-center d-flex">
             <div className="col-12">
               <h1 className="main-title">OUR MARKET</h1>
@@ -161,22 +172,22 @@ const OurCompany = () => {
             </div>
           </div>
 
-          <div className="row d-flex gap-4 mb-4 mx-4 justify-content-center">
-            <div className="col ind">
+          <div className="row d-flex gap-4 mb-4 mx-md-5 mx-2 justify-content-center">
+            <div className="col col-md-3 ind">
               <div className="p-5">
-                  <img src="./ind_icon.png" classname ="v-100 img-fluid" alt='industrialIcon' />
+                  <img src="./ind_icon.png" classname ="img-fluid" alt='industrialIcon' />
                   <div>INDUSTRIAL</div>
               </div>
             </div>
-            <div className="col rsd">
+            <div className="col col-md-3 rsd">
               <div className="p-5">
-                  <img src="./rsd_icon.png"className='v-100 img-fluid' alt ='residentialIcon'/>
+                  <img src="./rsd_icon.png"className='img-fluid' alt ='residentialIcon'/>
                   <div>RESIDENTIAL</div>
               </div>
             </div>
-            <div className="col comm">
+            <div className="col col-md-3 comm">
               <div className="p-5">
-                  <img src="./comm_icon.png" className='v-100 img-fluid' alt ='commercialIcon' />
+                  <img src="./comm_icon.png" className='img-fluid' alt ='commercialIcon' />
                   <div>COMMERCIAL</div>
               </div>
             </div>
@@ -184,13 +195,18 @@ const OurCompany = () => {
       </div>
 
       {/* CLIENT LIST */}
-      <div className="container mb-5">
+      <div className="fourth container-fluid pb-md-5 pb-1">
         <div className="row">
-          <h1 className='main-title mb-4'>CLIENT LIST</h1>
+          <h1 className='main-title mb-5'>CLIENT LIST</h1>
         </div>
 
-        <div className="residential row g-3 mb-4">
+        {/* RESIDENTIAL */}
+        <div className="row justify-content-center">
+          <section className='col-md-9'>
+         <div className="row">
           <h3 className='main-title text-start'>RESIDENTIAL</h3>
+        </div>  
+        <div className="residential row g-3 mb-5">
             <div className="col-md-3 col-4">
               <img src="./placeholder.png" alt="placeholder" className='w-100'/>
             </div>
@@ -206,45 +222,60 @@ const OurCompany = () => {
             <div className="col-md-3 col-4">
               <img src="./placeholder.png" alt="placeholder" className='w-100' />
             </div> 
+        </div>
+        </section>        
+        {/* INDUSTRIAL */}
+        <section className='col-md-9'>
+         <div className="row">
+          <h3 className='main-title text-start'>INDUSTRIAL</h3>
+        </div>
+        <div className="industrial row g-3 mb-5">
+            <div className="col-md-3 col-4">
+              <img src="./placeholder.png" alt="placeholder" className='w-100' />
+            </div>
+            <div className="col-md-3 col-4">
+              <img src="./placeholder.png" alt="placeholder" className='w-100'/>
+            </div>
+            <div className="col-md-3 col-4">
+              <img src="./placeholder.png" alt="placeholder" className='w-100'/>
+            </div>
+            <div className="col-md-3 col-4">
+              <img src="./placeholder.png" alt="placeholder" className='w-100' />
+            </div>
+            <div className="col-md-3 col-4">
+              <img src="./placeholder.png" alt="placeholder" className='w-100' />
+            </div> 
+        </div> 
+        </section>
+        
+        {/* COMMERCIAL */}
+        <section className='col-md-9'>
+           <div className="row">
+          <h3 className='main-title text-start'>COMMERCIAL</h3>
+        </div>
+        <div className="commercial row g-3 mb-5">
+            <div className="col-md-3 col-4">
+              <img src="./placeholder.png" alt="placeholder" className='w-100' />
+            </div>
+            <div className="col-md-3 col-4">
+              <img src="./placeholder.png" alt="placeholder" className='w-100'/>
+            </div>
+            <div className="col-md-3 col-4">
+              <img src="./placeholder.png" alt="placeholder" className='w-100'/>
+            </div>
+            <div className="col-md-3 col-4">
+              <img src="./placeholder.png" alt="placeholder" className='w-100' />
+            </div>
+            <div className="col-md-3 col-4">
+              <img src="./placeholder.png" alt="placeholder" className='w-100' />
+            </div> 
+        </div>
+        </section>
         </div>
         
-        <div className="industrial row g-3 mb-4">
-          <h3 className='main-title text-start'>INDUSTRIAL</h3>
-            <div className="col-md-3 col-4">
-              <img src="./placeholder.png" alt="placeholder" className='w-100' />
-            </div>
-            <div className="col-md-3 col-4">
-              <img src="./placeholder.png" alt="placeholder" className='w-100'/>
-            </div>
-            <div className="col-md-3 col-4">
-              <img src="./placeholder.png" alt="placeholder" className='w-100'/>
-            </div>
-            <div className="col-md-3 col-4">
-              <img src="./placeholder.png" alt="placeholder" className='w-100' />
-            </div>
-            <div className="col-md-3 col-4">
-              <img src="./placeholder.png" alt="placeholder" className='w-100' />
-            </div> 
-        </div>
+        
 
-        <div className="commercial row g-3 mb-4">
-          <h3 className='main-title text-start'>COMMERCIAL</h3>
-            <div className="col-md-3 col-4">
-              <img src="./placeholder.png" alt="placeholder" className='w-100' />
-            </div>
-            <div className="col-md-3 col-4">
-              <img src="./placeholder.png" alt="placeholder" className='w-100'/>
-            </div>
-            <div className="col-md-3 col-4">
-              <img src="./placeholder.png" alt="placeholder" className='w-100'/>
-            </div>
-            <div className="col-md-3 col-4">
-              <img src="./placeholder.png" alt="placeholder" className='w-100' />
-            </div>
-            <div className="col-md-3 col-4">
-              <img src="./placeholder.png" alt="placeholder" className='w-100' />
-            </div> 
-        </div>
+       
       </div>
       <Footer />
     </>

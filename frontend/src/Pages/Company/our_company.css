@@ -1,11 +1,11 @@
-
+/* 
 .bg {
   height: auto;
   background: linear-gradient(#063A83, rgba(0, 0, 0, 0.406)), url('./questairbg.png');
   background-size: cover; 
   background-position: center;
   color: white;
-}
+} */
 
 .ind{
   background: linear-gradient(rgba(0, 0, 0, 0.768), rgba(0, 0, 0, 0.7)), url('./industrial.png');
@@ -67,6 +67,8 @@
 
 .wh-text {
   font-style: italic;
+  margin-left: 120px;
+  margin-right: 120px;
 }
 
 .vision, .mission {
@@ -110,13 +112,14 @@
 .core-values-box {
   border: 5px solid #3B81E6;
   height: 100%;
-  padding: 24px;
+  padding: 10px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 
 
-
-.vs:hover, .ms:hover {
+.ms-texts:hover, .vs-texts:hover {
   transform: scale(1.03);
   transition: 0.1s ease-in-out;
 }
@@ -126,29 +129,23 @@
   transition: 0.1s ease-in-out;
 }
 
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 1s ease-out forwards;
-  animation-delay: 0.01s;
-}
 
-.fade-in-down {
-  opacity: 0;
-  animation: fadeInDown 1s ease-out forwards;
-  animation-delay: 0.01s;
-}
 
 .vs {
-  padding: 0.7em;
+  padding-top: 0.9em;
+  padding-bottom: 0.9em;
   color: #3B81E6;
-  background-color: #3B81E6;
+  background-color: #3B81E6; 
 }
 
 .ms {
-  padding: 0.7em;
+  padding-top: 0.9em;
+  padding-bottom: 0.9em;
   color: #3B81E6;
-  background-color: #3B81E6;
+  background-color: #3B81E6; 
 }
+
+
 
 @keyframes fadeIn {
   0% {
@@ -173,13 +170,13 @@
 }
 
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   body {
     background-color: rgb(255, 255, 255);
   }
 
   .vs{
-    transform: scale(0.90);
+    transform: scale(0.85);
   }
 
   .wh-text2 {
@@ -190,17 +187,17 @@
   }
 
   .ms{
-    transform: scale(0.90);
-    font-size: 8px;
+    transform: scale(0.85);
   }
 
   .title-vs{
     font-size: 19px;
   }
 
-  .subtexts-vs {
+  .subtexts-vms {
     font-size: 9px;
   }
+
 
   .core-values {
     border: 5px solid #3B81E6;
@@ -210,9 +207,8 @@
   }
   .core-values-box {
     border: 5px solid #3B81E6;
-    transform: scale(0.94);
+    transform: scale(0.85);
     padding: 0px;
-    margin: px;
   }
 
   .texts {

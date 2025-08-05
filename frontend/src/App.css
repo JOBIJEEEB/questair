@@ -1,5 +1,65 @@
 #root {
+  width: 100vw;
+  height: 100vh;
   margin: 0 auto;
   text-align: center;
   font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(#063A83, rgba(0, 0, 0, 0.406)), url('./questairbg.png');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-position-y: -250px;
+}
+
+.hero {
+  color: white;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.4s ease-out forwards;
+  animation-delay: 0.01s;
+}
+
+.fade-in-down {
+  opacity: 0;
+  animation: fadeInDown 0.4s ease-out forwards;
+  animation-delay: 0s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(17px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-17px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-y: -150px;
+  
+}
 }
