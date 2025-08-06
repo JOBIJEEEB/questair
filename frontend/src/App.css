@@ -55,11 +55,11 @@ body {
 
 @media (max-width: 768px) {
   body {
+   background: linear-gradient(#063A83, rgba(0, 0, 0, 0.406)), url('./questairbg_mb.png');
   background-attachment: fixed;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-position-y: -150px;
-  
+  background-position-y: 60px;
 }
 }

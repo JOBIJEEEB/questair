@@ -1,6 +1,11 @@
+
+.nv {
+    margin-right: 105px;
+}
 .navbar {
     z-index: 1000;
-    background-color:#083c84;
+    /* background-color:#083c84; */
+    background-image: linear-gradient(75deg,#083c84, #0f62d8, #083c84);
 }
 .navbar-toggler-icon {
     background-image: url("./burger.png");
@@ -21,6 +26,7 @@
   outline: 0;
   box-shadow: 0 0 0 0.0 rgba(255, 255, 255, 0);
 }
+
 
 
 .ctcbtn{
@@ -66,6 +72,14 @@
     text-decoration-thickness: 2px; 
     text-underline-offset: 6px;    */
     box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.318); 
-    border-radius: 4px; 
-}
+    border-radius: 4px;
+
+    }
+    .nv {
+    margin-right: 0px
+    }
+    .navbar {
+    background-color:#083c84;
+    background-image: linear-gradient(#083c84, #083c84);
+    }
 }

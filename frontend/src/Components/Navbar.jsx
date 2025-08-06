@@ -1,7 +1,7 @@
 // import { Link } from 'react-router-dom'
-import './navbar.css'
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import './navbar.css';
 
 const Navbar = () => {
   const location = useLocation();
@@ -10,7 +10,7 @@ const Navbar = () => {
   
   return (
     <>
-      <nav className="shadow navbar navbar-dark navbar-expand-lg">
+      <nav className="shadow navbar fixed-top navbar-dark navbar-expand-lg">
         <div className="container-fluid">
           <a className="navbar-brand">
             <Link to="/">
@@ -22,9 +22,10 @@ const Navbar = () => {
               aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
               </button>
-              <div className="collapse navbar-collapse" id="navbarSupportedContent">
+              <div className="collapse navbar-collapse nv" id="navbarSupportedContent">
                 
-                  <ul className="navbar-nav mx-auto mb-3 mb-lg-0 d-flex gap-md-5 gap-0 pt-md-0 pt-3">
+                  <ul className="navbar-nav mx-auto mb-3 mb-lg-0 d-flex  gap-md-5 gap-0 pt-md-0 pt-3">
+                    
                       <li className="nav-item">
                         <Link className={"nav-link" + (url === "/home" ?" active" : "")} aria-current="page" to="/home">Home</Link>
                       </li>

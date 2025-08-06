@@ -5,11 +5,9 @@ import './contact.css'
 const Contact = () => {
   return (
     <> 
-    <div>
-        
-    </div>
+    <Navbar />
     <section className="hero">
-        <Navbar />
+        
         <div className="container text-white text-center pt-5 py-3 px-md-2">
             <div className="who-box m-5">
                 <h1 className="who fade-in-down p-3">CONTACT US</h1>

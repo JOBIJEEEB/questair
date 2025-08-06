@@ -5,8 +5,8 @@ import './our_services.css'
 const OurServices = () => {
   return (
     <> 
+    <Navbar />
       <div className="hero">
-        <Navbar />
         <div className="first container text-white text-center pt-5 py-5 px-md-2">
             <div className="who-box m-md-5 m-1">
                 <h1 className="who fade-in-down p-3">OUR SERVICES</h1>
@@ -14,7 +14,7 @@ const OurServices = () => {
         </div>
       </div>
 
-      <div className="container-fluid fade-in bg-white mt-5 px-5 pt-4 pb-5">
+      <div className="container-fluid bg-white mt-0 px-5 pt-4 pb-5">
         <div className="services row one gap-4 mx-md-5 mx-1 px-md-5 pt-5 justify-content-center">
 
           {/* Air conditioning and Ventilation */}

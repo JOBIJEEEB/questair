@@ -125,7 +125,7 @@
 }
 
 .texts:hover{
-  transform: scale(1.05);
+  transform: scale(1.03);
   transition: 0.1s ease-in-out;
 }
 
@@ -135,14 +135,16 @@
   padding-top: 0.9em;
   padding-bottom: 0.9em;
   color: #3B81E6;
-  background-color: #3B81E6; 
+  /* background-color: #3B81E6;  */
+  background-image: linear-gradient( #3b81e6,#115fcc);
 }
 
 .ms {
   padding-top: 0.9em;
   padding-bottom: 0.9em;
   color: #3B81E6;
-  background-color: #3B81E6; 
+  /* background-color: #3B81E6;  */
+  background-image: linear-gradient( #3b81e6,#115fcc);
 }
 
 
@@ -201,9 +203,9 @@
 
   .core-values {
     border: 5px solid #3B81E6;
-    transform: scale(0.90);
-    margin-top: -30px;
-    margin-bottom: -45px;
+    transform: scale(0.85);
+    margin-top: -50px;
+    margin-bottom: -50px;
   }
   .core-values-box {
     border: 5px solid #3B81E6;

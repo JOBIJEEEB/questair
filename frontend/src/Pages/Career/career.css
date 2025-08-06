@@ -1,4 +1,5 @@
 .head {
-    background: #3b81e6;
+    /* background: #3b81e6; */
+    background-image: linear-gradient( #3b81e6,#115fcc);
     font-size: small;
 }

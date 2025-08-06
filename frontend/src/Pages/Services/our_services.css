@@ -25,10 +25,10 @@
 }
 
 
-/* @media (max-height: 768px){
+@media (max-height: 768px){
 
   .services {
-    scale: 0.6;
+   font-size: x-small;
   }
 
-} */
+}

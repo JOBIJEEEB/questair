@@ -1,5 +1,6 @@
 .ft {
-    background-color: #063A83;
+    /* background-color: #063A83; */
+    background-image: linear-gradient(#063A83, #063A83, #0950b3);
     font-weight: 500;
 }
 
