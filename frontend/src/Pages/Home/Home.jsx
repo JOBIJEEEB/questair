@@ -139,22 +139,22 @@ function Home(){
                 </div>
             </section>
             
-            <section className="container py-5">
+            <section className="news container py-5">
             <div className="container">
                 <div className="row justify-content-md-center">
                 <div className="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
                     <h3 className="mb-4 fw-bold text-center">Latest News</h3>
-                    <p className="mb-5 text-center">Stay tuned and updated by the latest updates from our blog.</p>
-                    <hr className="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle" />
+                    <p className="mb-4 text-center text-muted">Stay informed with our recent news and events.</p>
+                    
                 </div>
                 </div>
             </div>
 
             <div className="container overflow-hidden">
-                <div className="row gy-3 gy-lg-0 gx-xxl-5">
+                <div className="row gy-3 gy-lg-0 gx-xxl-5 mb-5 mt-3">
 
                     <div className="col-12 col-lg-4">
-                        <article>
+                        <article className='card p-4'>
                         <figure className="rounded mb-3">
                             <a href="">
                                 <img className="img-fluid"  src="./news/business.jpg" alt="Business" />
@@ -187,7 +187,7 @@ function Home(){
                     </div>
 
                     <div className="col-12 col-lg-4">
-                        <article>
+                        <article className='card p-4'>
                         <figure className="rounded mb-3">
                             <a href="">
                                 <img className="img-fluid"  src="./news/tech.jpg" alt="ISO" />
@@ -220,7 +220,7 @@ function Home(){
                     </div>
 
                     <div className="col-12 col-lg-4">
-                        <article>
+                        <article className='card p-4'>
                         <figure className="rounded mb-3">
                             <a href="">
                                 <img className="img-fluid"  src="./news/3.jpg" alt="Business" />
@@ -233,7 +233,7 @@ function Home(){
                             </li>
                             </ul>
                             <h2 className="entry-title h4 mb-0 text-start">
-                            <a className="link-dark text-decoration-none" href="">PSA: Building constructions rebounded by 13% in June 2025</a>
+                            <a className="link-dark text-decoration-none" href="">Building constructions rebounded by 13%</a>
                             </h2>
                         </div>
                         <div className="entry-footer">
@@ -249,21 +249,13 @@ function Home(){
                                 </li>
                             </ul>
                         </div>
-                     
-                        
-
-
-
-
-
                         </article>
                     </div>
-
                 </div>
             </div>
             </section>
 
-            <section className='container py-5'>
+            <section className='events container pb-5'>
                 <h3 className='mb-4 fw-bold'>Latest Events</h3>
                 <div className="row shadow border rounded-2">
                     <div className="col-md-4 bg-primary">

@@ -2,7 +2,7 @@
   border-radius: 25px;
   box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.1);
   background: rgb(252, 251, 249);
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, 0.2s ease-in-out;
   will-change: transform;
 }
 
