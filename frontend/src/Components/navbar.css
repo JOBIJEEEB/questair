@@ -3,8 +3,12 @@
     margin-right: 105px;
 }
 .navbar {
-    z-index: 1000;
+    z-index: 10;
     /* background-color:#083c84; */
+
+
+    position: fixed;
+    width: 100vw;
     background-image: linear-gradient(75deg,#083c84, #0f62d8, #083c84);
 }
 .navbar-toggler-icon {
@@ -64,7 +68,7 @@
 
 @media (max-width: 700px) {
   .active {
-    color: white;
+    color: #ffffff;
     font-weight: bold;
     text-decoration: none;
     font-weight: bolder;

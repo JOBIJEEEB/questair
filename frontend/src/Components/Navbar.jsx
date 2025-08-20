@@ -10,7 +10,7 @@ const Navbar = () => {
   
   return (
     <>
-      <nav className="shadow navbar fixed-top navbar-dark navbar-expand-lg">
+      <nav className="shadow navbar navbar-dark navbar-expand-lg">
         <div className="container-fluid">
           <a className="navbar-brand">
             <Link to="/">

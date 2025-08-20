@@ -7,7 +7,6 @@ const OurCompany = () => {
     <>  
     <Navbar />   
       <div className="hero">
-        
         <div className="first container text-center pt-5 py-3 px-md-2">
             <div className="who-box m-md-5 m-1">
                 <h2 className="who fade-in-down p-3">WHO WE ARE</h2>

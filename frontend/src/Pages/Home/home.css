@@ -35,3 +35,8 @@
 .bg1{
   background-image: url('bg1.png');
 }
+
+.card {
+  outline: none;
+}
+

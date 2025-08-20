@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Navbar from '../../Components/Navbar';
 import './home.css';
+import Footer from '../../Components/Footer';
 
 function Home(){
     const [data, setData] = useState([])
@@ -64,8 +65,9 @@ function Home(){
                         </div>
                     </div>
                 </div>
-                </section>
-                <section className="py-5 bg-white text-center">
+            </section>
+
+            <section className="py-5 bg-white text-center">
                     <div className="container">
                         {/* Title & Paragraph */}
                         <div className="mb-5">
@@ -89,53 +91,203 @@ function Home(){
                             ))}
                         </div>
                     </div>
-                    </section>
-                    <section className="container py-5">
-                        <h3 className="mb-4 fw-bold">Services</h3>
-                        <div className="row">
-                            {/* Left menu */}
-                            <div className="col-md-4">
-                                <div className="list-group">
-                                    {services.map((service) => (
-                                    <button
-                                        key={service.name}
-                                        type="button"
-                                        className={`list-group-item list-group-item-action ${selected === service.name ? 'active' : ''}`}
-                                        onClick={() => setSelected(service.name)}
-                                    >
-                                        <span className="me-2">{service.icon}</span>
-                                        {service.name}
-                                    </button>
-                                    ))}
-                                </div>
-                            </div>
+            </section>
 
-                            {/* Right content */}
-                            <div className="col-md-8">
-                            <div className="card shadow">
-                                <img
-                                src={serviceDetails[selected]?.image}
-                                className="card-img-top"
-                                alt={selected}
-                                />
-                                <div className="card-body">
-                                <h5 className="card-title fw-bold">{serviceDetails[selected]?.title}</h5>
-                                <p className="card-text">{serviceDetails[selected]?.description}</p>
-                                <ul className="list-unstyled">
-                                    {serviceDetails[selected]?.points?.map((point, idx) => (
-                                    <li key={idx} className="mb-1">
-                                        <span className="text-success me-2">✔️</span>
-                                        {point}
-                                    </li>
-                                    ))}
-                                </ul>
-                                <a href="#" className="btn btn-primary mt-3">Learn More</a>
-                                </div>
-                            </div>
-                            </div>
+            <section className="container py-5">
+                <h3 className="mb-4 fw-bold">Services</h3>
+                <div className="row">
+                    {/* Left menu */}
+                    <div className="col-md-4">
+                        <div className="list-group">
+                            {services.map((service) => (
+                            <button
+                                key={service.name}
+                                type="button"
+                                className={`list-group-item list-group-item-action ${selected === service.name ? 'active' : ''}`}
+                                onClick={() => setSelected(service.name)}
+                            >
+                                <span className="me-2">{service.icon}</span>
+                                {service.name}
+                            </button>
+                            ))}
                         </div>
-                    </section>
-            </>
+                    </div>
+
+                    {/* Right content */}
+                    <div className="col-md-8">
+                    <div className="card shadow">
+                        <img
+                        src={serviceDetails[selected]?.image}
+                        className="card-img-top"
+                        alt={selected}
+                        />
+                        <div className="card-body">
+                        <h5 className="card-title fw-bold">{serviceDetails[selected]?.title}</h5>
+                        <p className="card-text">{serviceDetails[selected]?.description}</p>
+                        <ul className="list-unstyled">
+                            {serviceDetails[selected]?.points?.map((point, idx) => (
+                            <li key={idx} className="mb-1">
+                                <span className="text-success me-2">✔️</span>
+                                {point}
+                            </li>
+                            ))}
+                        </ul>
+                        <a href="#" className="btn btn-primary mt-3">Learn More</a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section className="container py-5">
+            <div className="container">
+                <div className="row justify-content-md-center">
+                <div className="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
+                    <h3 className="mb-4 fw-bold text-center">Latest News</h3>
+                    <p className="mb-5 text-center">Stay tuned and updated by the latest updates from our blog.</p>
+                    <hr className="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle" />
+                </div>
+                </div>
+            </div>
+
+            <div className="container overflow-hidden">
+                <div className="row gy-3 gy-lg-0 gx-xxl-5">
+
+                    <div className="col-12 col-lg-4">
+                        <article>
+                        <figure className="rounded mb-3">
+                            <a href="">
+                                <img className="img-fluid"  src="./news/business.jpg" alt="Business" />
+                            </a>
+                        </figure>
+                        <div className="entry-header mb-3">
+                            <ul className="entry-meta list-unstyled d-flex mb-2">
+                            <li>
+                                <a className="link-primary text-decoration-none" href="">Business</a>
+                            </li>
+                            </ul>
+                            <h2 className="entry-title h4 mb-0 text-start">
+                            <a className="link-dark text-decoration-none" href="#!">Philippine Business Conference and Expo</a>
+                            </h2>
+                        </div>
+                        <div className="entry-footer">
+                            <ul className="entry-meta list-unstyled d-flex align-items-center mb-0">
+                                <li>
+                                    <a className="fs-7 link-secondary text-decoration-none d-flex align-items-center" href="#!">
+                                    <svg width="14" height="14" fill="currentColor" className="bi bi-calendar3" viewBox="0 0 16 16">
+                                        <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z" />
+                                        <path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                                    </svg>
+                                    <span className="ms-2 fs-7">7 Feb 2023</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        </article>
+                    </div>
+
+                    <div className="col-12 col-lg-4">
+                        <article>
+                        <figure className="rounded mb-3">
+                            <a href="">
+                                <img className="img-fluid"  src="./news/tech.jpg" alt="ISO" />
+                            </a>
+                        </figure>
+                        <div className="entry-header mb-3">
+                            <ul className="entry-meta list-unstyled d-flex mb-2">
+                            <li>
+                                <a className="link-primary text-decoration-none" href="">Milestone</a>
+                            </li>
+                            </ul>
+                            <h2 className="entry-title h4 mb-0 text-start">
+                            <a className="link-dark text-decoration-none" href="">QAT achieves ISO 12345:2025 certification</a>
+                            </h2>
+                        </div>
+                        <div className="entry-footer">
+                            <ul className="entry-meta list-unstyled d-flex align-items-center mb-0">
+                                <li>
+                                    <a className="fs-7 link-secondary text-decoration-none d-flex align-items-center" href="#!">
+                                    <svg width="14" height="14" fill="currentColor" className="bi bi-calendar3" viewBox="0 0 16 16">
+                                        <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z" />
+                                        <path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                                    </svg>
+                                    <span className="ms-2 fs-7">7 Feb 2023</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        </article>
+                    </div>
+
+                    <div className="col-12 col-lg-4">
+                        <article>
+                        <figure className="rounded mb-3">
+                            <a href="">
+                                <img className="img-fluid"  src="./news/3.jpg" alt="Business" />
+                            </a>
+                        </figure>
+                        <div className="entry-header mb-3">
+                            <ul className="entry-meta list-unstyled d-flex mb-2">
+                            <li>
+                                <a className="link-primary text-decoration-none" href="">Business</a>
+                            </li>
+                            </ul>
+                            <h2 className="entry-title h4 mb-0 text-start">
+                            <a className="link-dark text-decoration-none" href="">PSA: Building constructions rebounded by 13% in June 2025</a>
+                            </h2>
+                        </div>
+                        <div className="entry-footer">
+                            <ul className="entry-meta list-unstyled d-flex align-items-center mb-0">
+                                <li>
+                                    <a className="fs-7 link-secondary text-decoration-none d-flex align-items-center" href="#!">
+                                    <svg width="14" height="14" fill="currentColor" className="bi bi-calendar3" viewBox="0 0 16 16">
+                                        <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z" />
+                                        <path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                                    </svg>
+                                    <span className="ms-2 fs-7">7 Feb 2023</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                     
+                        
+
+
+
+
+
+                        </article>
+                    </div>
+
+                </div>
+            </div>
+            </section>
+
+            <section className='container py-5'>
+                <h3 className='mb-4 fw-bold'>Latest Events</h3>
+                <div className="row shadow border rounded-2">
+                    <div className="col-md-4 bg-primary">
+                        
+                        <div className="shadow bg-white m-5">
+                            <img src='placeholder.png' className='img-responsive'/>
+                        </div>
+                    </div>
+                    <div className="col-md-8 text-start">
+                        <div className="text fw-bold row mt-5 mx-2 px-1">
+                            <h1>
+                                Headline
+                            </h1>
+                        </div>
+                        <div className="subtext text-muted row mt-1 mx-2 px-1">
+                                <p>
+                                    asdsadada
+                                </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        <Footer />
+        </>
     )
 }
 
