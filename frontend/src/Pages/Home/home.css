@@ -55,6 +55,13 @@
 
 }
 
+.services-img {
+  max-width: 856px;
+  max-height: 280px;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+}
 
 .services {
   background-color: rgb(255, 255, 255);
@@ -62,7 +69,5 @@
   width: 100vw;
 }
 
-.services-img {
-  object-fit: fill;
-}
+
 

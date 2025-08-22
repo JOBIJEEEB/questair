@@ -29,6 +29,78 @@ function Home(){
     ];
 
     const serviceDetails = {
+     'Electrical BIM & VDC': {
+        title: 'Electrical BIM & VDC',
+        description:
+        'A comprehensive service targeting electrical contractors and project teams to streamline design and construction workflows using Building Information Modeling (BIM) and Virtual Design and Construction (VDC) technologies.',
+        points: [
+        '3D Electrical Model Creation & Coordination',
+        'Clash Detection & Resolution',
+        'Systems Performance Simulation',
+        ],
+        image: './services/elec_bim.jpg', 
+    },
+    
+    'Mechanical & Plumbing': {
+        title: 'Mechanical & Plumbing',
+        description:
+        'Focused on delivering precise mechanical and plumbing system models to enhance project accuracy and coordination, from design through to installation.',
+        points: [
+        'Pipe Routing & Equipment Layout Optimization',
+        'Integration with HVAC and Fire Protection Systems',
+        ],
+        image: './services/mech_plumb.jpg', 
+    },
+
+    'Civil Underground': {
+        title: 'Civil Underground',
+        description:
+        'Providing expert modeling and coordination services for underground civil infrastructure, ensuring smooth integration with other site disciplines and adherence to project specifications.',
+        points: [
+        'Underground Utility Modeling & Coordination',
+        'Geotechnical Data Incorporation',
+        ],
+        image: './services/civil-underground.jpg', 
+    },
+
+    'Concrete BIM & VDC': {
+        title: 'Concrete BIM & VDC',
+        description:
+        'Specialized BIM and VDC services tailored to concrete contractors and structural teams, designed to improve constructability and project delivery through detailed concrete modeling.',
+        points: [
+        'Rebar Detailing & Placement Modeling',
+        'Concrete Pour Sequencing & Planning',
+        'Structural Model Validation',
+        'Constructability Reviews & Clash Resolution',
+        ],
+        image: './services/concrete_bim.jpg', 
+    },
+    
+    'VDC Coordination Management': {
+        title: 'VDC Coordination Management',
+        description:
+        'A centralized service providing comprehensive coordination management for all trades and disciplines, bridging communication gaps to ensure project milestones are met with efficiency.',
+       points: [
+        'Multi-Discipline Model Coordination',
+        'Clash Detection & Issue Tracking',
+        'Coordination Meeting Facilitation',
+        'Scheduling & Progress Monitoring',
+        ],
+        image: './services/VDC.jpg', 
+    },
+
+    'Onsite Quality Control': {
+        title: 'Onsite Quality Control',
+        description:
+        'Focused on supporting construction quality assurance through digital tools, onsite inspections, and real-time data collection to help reduce rework and maintain project standards.',
+        points: [
+        'Field Data Collection & Reporting',
+        'Integration with BIM for Visual Inspections',
+        'Quality Tracking & Issue Resolution',
+        ],
+        image: './services/onsite_qc.jpg', 
+    },
+    
     'Enhanced Design': {
         title: 'Enhanced Design',
         description:
@@ -39,14 +111,15 @@ function Home(){
         'Design Model Development to LOD 350',
         'Model-Based Cost Analysis',
         ],
-        image: './services/concrete_bim.jpg', 
+        image: './services/enhanced_des.jpg', 
     },
 
     };
-    const [selected, setSelected] = useState('Enhanced Design');
+    const [selected, setSelected] = useState('Electrical BIM & VDC');
 
     return (
         <>
+        
         <Navbar />
         {/* HERO SECTION */}
             <section className="container-fluid px-5 py-5 bg1">
@@ -98,9 +171,9 @@ function Home(){
         {/* SERVICES */}
             <section className="services container py-5">
                 <h3 className="mb-4 fw-bold">Services</h3>
-                <div className="row">
+                <div className="row align-items-start justify-content-center">
                     {/* Left menu */}
-                    <div className="col-md-4">
+                    <div className="col-md-4 mb-md-0 mb-3">
                         <div className="list-group">
                             {services.map((service) => (
                             <button
