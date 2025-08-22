@@ -39,7 +39,7 @@ function Home(){
         'Design Model Development to LOD 350',
         'Model-Based Cost Analysis',
         ],
-        image: 'https://via.placeholder.com/600x300?text=Enhanced+Design', 
+        image: './services/concrete_bim.jpg', 
     },
 
     };
@@ -121,7 +121,7 @@ function Home(){
                     <div className="card shadow">
                         <img
                         src={serviceDetails[selected]?.image}
-                        className="card-img-top"
+                        className="card-img-top services-img"
                         alt={selected}
                         />
                         <div className="card-body">
@@ -251,22 +251,21 @@ function Home(){
             </section>
 
         {/* LATEST EVENTS */}
-            <section className='events container pb-5'>
+            <section className='events container pb-5 bg'>
                 <h3 className='mb-4 fw-bold'>Latest Events</h3>
 
-                <event className="event row border rounded-4 mb-5 align-items-center">
-                    <div className="col-md-4">
+                <event className="event row border rounded-4 mb-5 align-items-center justify-content-center mx-md-0 mx-3">
+                    <div className="col-md-4 col-12">
                         <div className="bg-white m-4">
                             <img src='./events/event1.webp' className='img-fluid rounded-2'/>
                         </div>
                     </div>
-                    <div className="col-md-8 text-start">
-                        
+                    <div className="col-md-8 text-md-start">
                         <div className="fw-bold row">
                             <h2>
                                 QAT Family Fun Run 2025
                             </h2>
-                            <ul className="entry-meta list-unstyled d-flex align-items-center mb-0">
+                            <ul className="entry-meta list-unstyled d-flex align-items-center justify-content-md-start justify-content-center mb-0">
                                 <li>
                                     <a className="fs-7 text-secondary text-decoration-none d-flex align-items-center">
                                     <img src='./calendar.png' className='img-fluid'/>
@@ -275,7 +274,7 @@ function Home(){
                                 </li>
                             </ul>
                         </div>
-                        <div className="text-muted row mt-1">
+                        <div className="text-muted row mt-1 d-none d-md-block">
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -284,7 +283,7 @@ function Home(){
                         </div>
 
                         {/* POP-UP */}
-                        <div className="row">
+                        <div className="row mt-md-0 mt-3 mb-md-0 mb-4">
                             <div className="col-md-4">
                                 <button type='button' className='btn btn-primary' data-bs-toggle='modal' data-bs-target='#event1'>Learn more</button>
                             </div>
@@ -332,27 +331,27 @@ function Home(){
                     </div>
                 </event>
 
-                <event className="event row border rounded-4 mb-5 align-items-center">
-                    <div className="col-md-4">
+                <event className="event row border rounded-4 mb-5 align-items-center justify-content-center mx-md-0 mx-3">
+                    <div className="col-md-4 col-12">
                         <div className="bg-white m-4">
                             <img src='./events/event2.webp' className='img-fluid rounded-2'/>
                         </div>
                     </div>
-                    <div className="col-md-8 text-start">
+                    <div className="col-md-8 text-md-start">
                         <div className="fw-bold row">
                             <h2>
-                               2025 Quarterly Nationwide Simultaneous Earthquake Drill
+                                2025 Quarterly Nationwide Simultaneous Earthquake Drill
                             </h2>
-                              <ul className="entry-meta list-unstyled d-flex align-items-center mb-0">
+                            <ul className="entry-meta list-unstyled d-flex align-items-center justify-content-md-start justify-content-center mb-0">
                                 <li>
                                     <a className="fs-7 text-secondary text-decoration-none d-flex align-items-center">
-                                   <img src='./calendar.png' className='img-fluid'/>
+                                    <img src='./calendar.png' className='img-fluid'/>
                                     <span className="ms-2 fs-7">Aug 22 2025</span>
                                     </a>
                                 </li>
                             </ul>
                         </div>
-                        <div className="text-muted row mt-1">
+                        <div className="text-muted row mt-1 d-none d-md-block">
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -360,14 +359,13 @@ function Home(){
                             </p>
                         </div>
 
-
                         {/* POP-UP */}
-                        <div className="row">
+                        <div className="row mt-md-0 mt-3 mb-md-0 mb-4">
                             <div className="col-md-4">
                                 <button type='button' className='btn btn-primary' data-bs-toggle='modal' data-bs-target='#event2'>Learn more</button>
                             </div>
 
-                            <div class="modal fade" id="event2" tabindex="-1" role="dialog" aria-labelledby="event1" aria-hidden="true">
+                            <div class="modal fade" id="event2" tabindex="-1" role="dialog" aria-labelledby="event2" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -391,6 +389,7 @@ function Home(){
                                                     </li>
                                                  </ul>
                                                 </div>
+                                                
                                                 <p className='text-center'>
                                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                                                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -408,7 +407,6 @@ function Home(){
                         </div>
                     </div>
                 </event>
-
             </section>
         <Footer />
         </>
