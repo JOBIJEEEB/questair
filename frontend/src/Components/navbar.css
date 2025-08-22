@@ -64,7 +64,7 @@
 }
 
 @media (max-width: 700px) {
-  .active {
+  .navbar .active {
     color: #ffffff;
     font-weight: bold;
     text-decoration: none;

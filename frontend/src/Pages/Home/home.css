@@ -55,6 +55,13 @@
 
 }
 
+
+.services {
+  background-color: rgb(255, 255, 255);
+  background-size: cover;
+  width: 100vw;
+}
+
 .services-img {
   object-fit: fill;
 }
