@@ -17,12 +17,15 @@ A modern frontend project for an engineering and construction company, built to 
 
 **UI/UX:** Figma
 
-**Client:** React.js | Vite | Bootstrap 5
+**Front-end:** React.js | Bootstrap 5
 
-**Server and Database:** Node.js | Express | MySQL2
+**Back-end and Database:** Node.js | Express | MySQL2
 
 ## Screenshots
-<a href="https://i.imghippo.com/files/GZRH1059eVY.png" target="_blank" rel="noopener"><img src="https://i.imghippo.com/files/GZRH1059eVY.png" alt="Uploaded image on Imghippo" border="0"></a>
-<a href="https://i.imghippo.com/files/jELc9056DqY.png" target="_blank" rel="noopener"><img src="https://i.imghippo.com/files/jELc9056DqY.png" alt="Uploaded image on Imghippo" border="0"></a>
+<img width="1730" height="942" alt="image" src="https://github.com/user-attachments/assets/549882ff-50c4-4241-83fa-981f926bf806" />
+<img width="1899" height="1032" alt="image" src="https://github.com/user-attachments/assets/80fa9215-1d73-421c-bc09-867fa5fcd03d" />
+<img width="1728" height="942" alt="image" src="https://github.com/user-attachments/assets/507a3812-5b30-40d1-bebd-8719f30795f3" />
+<img width="1911" height="1026" alt="image" src="https://github.com/user-attachments/assets/eafc4451-d8a0-47f8-8fc6-4a522fabb805" />
+
 
 
