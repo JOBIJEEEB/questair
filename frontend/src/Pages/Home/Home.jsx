@@ -197,18 +197,18 @@ function Home(){
                         className="card-img-top services-img"
                         alt={selected}
                         />
-                        <div className="card-body">
-                        <h5 className="card-title fw-bold">{serviceDetails[selected]?.title}</h5>
+                        <div className="card-body text-start">
+                        <h4 className="card-title fw-bold">{serviceDetails[selected]?.title}</h4>
                         <p className="card-text">{serviceDetails[selected]?.description}</p>
                         <ul className="list-unstyled">
                             {serviceDetails[selected]?.points?.map((point, idx) => (
                             <li key={idx} className="mb-1">
-                                <span className="text-success me-2">✔️</span>
+                                <span className="text-success me-2">☑️</span>
                                 {point}
                             </li>
                             ))}
                         </ul>
-                        <a href="#" className="btn btn-primary mt-3">Learn More</a>
+                        <a href="#" className="btn btn-primary">Learn More</a>
                         </div>
                     </div>
                     </div>
