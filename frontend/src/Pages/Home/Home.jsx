@@ -39,17 +39,18 @@ function Home(){
         'Design Model Development to LOD 350',
         'Model-Based Cost Analysis',
         ],
-        image: 'https://via.placeholder.com/600x300?text=Enhanced+Design', // Placeholder
+        image: 'https://via.placeholder.com/600x300?text=Enhanced+Design', 
     },
-    
-    // You can add more service details for other services if needed
+
     };
     const [selected, setSelected] = useState('Enhanced Design');
+
     return (
         <>
         <Navbar />
+        {/* HERO SECTION */}
             <section className="container-fluid px-5 py-5 bg1">
-                <div className="row align-items-center">
+                <div className="hero row align-items-center">
                     <div className="col-lg-6 text-start">
                     <h2 className="fw-bold text-primary mb-4">
                         One of the Philippines’ leading Engineering Firm, Contractor and Fabricator
@@ -67,6 +68,7 @@ function Home(){
                 </div>
             </section>
 
+        {/* STATS SECTION */}
             <section className="py-5 bg-white text-center">
                     <div className="container">
                         {/* Title & Paragraph */}
@@ -93,7 +95,8 @@ function Home(){
                     </div>
             </section>
 
-            <section className="container py-5">
+        {/* SERVICES */}
+            <section className="services container py-5">
                 <h3 className="mb-4 fw-bold">Services</h3>
                 <div className="row">
                     {/* Left menu */}
@@ -139,22 +142,22 @@ function Home(){
                 </div>
             </section>
             
+        {/* LATEST NEWS */}
             <section className="news container py-5">
             <div className="container">
                 <div className="row justify-content-md-center">
-                <div className="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
-                    <h3 className="mb-4 fw-bold text-center">Latest News</h3>
-                    <p className="mb-4 text-center text-muted">Stay informed with our recent news and events.</p>
-                    
-                </div>
+                    <div className="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
+                        <h3 className="mb-4 fw-bold text-center">Latest News</h3>
+                        {/* <p className="mb-4 text-center text-muted">Stay informed with our recent news and events.</p> */}
+                    </div>
                 </div>
             </div>
 
             <div className="container overflow-hidden">
                 <div className="row gy-3 gy-lg-0 gx-xxl-5 mb-5 mt-3">
 
-                    <div className="col-12 col-lg-4">
-                        <article className='card p-4'>
+                    <article className="col-12 col-lg-4">
+                        <div className='card p-4'>
                         <figure className="rounded mb-3">
                             <a href="">
                                 <img className="img-fluid"  src="./news/business.jpg" alt="Business" />
@@ -173,21 +176,19 @@ function Home(){
                         <div className="entry-footer">
                             <ul className="entry-meta list-unstyled d-flex align-items-center mb-0">
                                 <li>
-                                    <a className="fs-7 link-secondary text-decoration-none d-flex align-items-center" href="#!">
-                                    <svg width="14" height="14" fill="currentColor" className="bi bi-calendar3" viewBox="0 0 16 16">
-                                        <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z" />
-                                        <path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
-                                    </svg>
-                                    <span className="ms-2 fs-7">7 Feb 2023</span>
+                                   
+                                    <a className="fs-7 text-secondary text-decoration-none d-flex align-items-center">
+                                   <img src='./calendar.png' className='img-fluid'/>
+                                    <span className="ms-2 fs-7">Aug 22 2025</span>
                                     </a>
                                 </li>
                             </ul>
                         </div>
-                        </article>
-                    </div>
+                        </div>
+                    </article>
 
-                    <div className="col-12 col-lg-4">
-                        <article className='card p-4'>
+                    <article className="col-12 col-lg-4">
+                        <div className='card p-4'>
                         <figure className="rounded mb-3">
                             <a href="">
                                 <img className="img-fluid"  src="./news/tech.jpg" alt="ISO" />
@@ -207,20 +208,17 @@ function Home(){
                             <ul className="entry-meta list-unstyled d-flex align-items-center mb-0">
                                 <li>
                                     <a className="fs-7 link-secondary text-decoration-none d-flex align-items-center" href="#!">
-                                    <svg width="14" height="14" fill="currentColor" className="bi bi-calendar3" viewBox="0 0 16 16">
-                                        <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z" />
-                                        <path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
-                                    </svg>
-                                    <span className="ms-2 fs-7">7 Feb 2023</span>
+                                    <img src='./calendar.png' className='img-fluid'/>
+                                    <span className="ms-2 fs-7">Aug 22 2025</span>
                                     </a>
                                 </li>
                             </ul>
                         </div>
-                        </article>
-                    </div>
+                        </div>
+                    </article>
 
-                    <div className="col-12 col-lg-4">
-                        <article className='card p-4'>
+                    <article className="col-12 col-lg-4">
+                        <div className='card p-4'>
                         <figure className="rounded mb-3">
                             <a href="">
                                 <img className="img-fluid"  src="./news/3.jpg" alt="Business" />
@@ -240,43 +238,177 @@ function Home(){
                             <ul className="entry-meta list-unstyled d-flex align-items-center mb-0">
                                 <li>
                                     <a className="fs-7 link-secondary text-decoration-none d-flex align-items-center" href="#!">
-                                    <svg width="14" height="14" fill="currentColor" className="bi bi-calendar3" viewBox="0 0 16 16">
-                                        <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z" />
-                                        <path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
-                                    </svg>
-                                    <span className="ms-2 fs-7">7 Feb 2023</span>
+                                    <img src='./calendar.png' className='img-fluid'/>
+                                    <span className="ms-2 fs-7">Aug 22 2025</span>
                                     </a>
                                 </li>
                             </ul>
                         </div>
-                        </article>
-                    </div>
+                        </div>
+                    </article>
                 </div>
             </div>
             </section>
 
+        {/* LATEST EVENTS */}
             <section className='events container pb-5'>
                 <h3 className='mb-4 fw-bold'>Latest Events</h3>
-                <div className="row shadow border rounded-2">
-                    <div className="col-md-4 bg-primary">
-                        
-                        <div className="shadow bg-white m-5">
-                            <img src='placeholder.png' className='img-responsive'/>
+
+                <event className="event row border rounded-4 mb-5 align-items-center">
+                    <div className="col-md-4">
+                        <div className="bg-white m-4">
+                            <img src='./events/event1.webp' className='img-fluid rounded-2'/>
                         </div>
                     </div>
                     <div className="col-md-8 text-start">
-                        <div className="text fw-bold row mt-5 mx-2 px-1">
-                            <h1>
-                                Headline
-                            </h1>
+                        
+                        <div className="fw-bold row">
+                            <h2>
+                                QAT Family Fun Run 2025
+                            </h2>
+                            <ul className="entry-meta list-unstyled d-flex align-items-center mb-0">
+                                <li>
+                                    <a className="fs-7 text-secondary text-decoration-none d-flex align-items-center">
+                                    <img src='./calendar.png' className='img-fluid'/>
+                                    <span className="ms-2 fs-7">Aug 22 2025</span>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
-                        <div className="subtext text-muted row mt-1 mx-2 px-1">
-                                <p>
-                                    asdsadada
-                                </p>
+                        <div className="text-muted row mt-1">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            </p>
+                        </div>
+
+                        {/* POP-UP */}
+                        <div className="row">
+                            <div className="col-md-4">
+                                <button type='button' className='btn btn-primary' data-bs-toggle='modal' data-bs-target='#event1'>Learn more</button>
+                            </div>
+
+                            <div class="modal fade" id="event1" tabindex="-1" role="dialog" aria-labelledby="event1" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="label">Event Details</h5>
+                                            <button className="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true"></span>
+                                            </button>
+                                        </div>
+
+                                        <div class="modal-body">
+                                            <div className="row text-justified">
+                                                <img src='./events/event1.webp' className='img-fluid'/>
+                                                <div className='mb-md-3 mb-2'>
+                                                 <h4 className='text-center mt-md-3 mt-2'>QAT Family Fun Run 2025</h4>
+                                                 <ul className="entry-meta list-unstyled d-flex align-items-center justify-content-center mb-0">
+                                                    <li>
+                                                        <a className="fs-7 text-secondary text-decoration-none d-flex align-items-center">
+                                                    <img src='./calendar.png' className='img-fluid'/>
+                                                        <span className="ms-2 fs-7">Aug 22 2025</span>
+                                                        </a>
+                                                    </li>
+                                                 </ul>
+                                                </div>
+                                                
+                                                <p className='text-center'>
+                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </event>
+
+                <event className="event row border rounded-4 mb-5 align-items-center">
+                    <div className="col-md-4">
+                        <div className="bg-white m-4">
+                            <img src='./events/event2.webp' className='img-fluid rounded-2'/>
+                        </div>
+                    </div>
+                    <div className="col-md-8 text-start">
+                        <div className="fw-bold row">
+                            <h2>
+                               2025 Quarterly Nationwide Simultaneous Earthquake Drill
+                            </h2>
+                              <ul className="entry-meta list-unstyled d-flex align-items-center mb-0">
+                                <li>
+                                    <a className="fs-7 text-secondary text-decoration-none d-flex align-items-center">
+                                   <img src='./calendar.png' className='img-fluid'/>
+                                    <span className="ms-2 fs-7">Aug 22 2025</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="text-muted row mt-1">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            </p>
+                        </div>
+
+
+                        {/* POP-UP */}
+                        <div className="row">
+                            <div className="col-md-4">
+                                <button type='button' className='btn btn-primary' data-bs-toggle='modal' data-bs-target='#event2'>Learn more</button>
+                            </div>
+
+                            <div class="modal fade" id="event2" tabindex="-1" role="dialog" aria-labelledby="event1" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="label">Event Details</h5>
+                                            <button className="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true"></span>
+                                            </button>
+                                        </div>
+
+                                        <div class="modal-body">
+                                            <div className="row text-justified">
+                                                <img src='./events/event2.webp' className='img-fluid'/>
+                                                <div className='mb-md-3 mb-2'>
+                                                 <h4 className='text-center mt-md-3 mt-2'>2025 Quarterly Nationwide Simultaneous Earthquake Drill</h4>
+                                                 <ul className="entry-meta list-unstyled d-flex align-items-center justify-content-center mb-0">
+                                                    <li>
+                                                        <a className="fs-7 text-secondary text-decoration-none d-flex align-items-center">
+                                                    <img src='./calendar.png' className='img-fluid'/>
+                                                        <span className="ms-2 fs-7">Aug 22 2025</span>
+                                                        </a>
+                                                    </li>
+                                                 </ul>
+                                                </div>
+                                                <p className='text-center'>
+                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </event>
+
             </section>
         <Footer />
         </>
