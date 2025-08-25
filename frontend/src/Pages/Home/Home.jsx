@@ -1,8 +1,9 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import Footer from '../../Components/Footer';
 import Navbar from '../../Components/Navbar';
 import './home.css';
-import Footer from '../../Components/Footer';
+// import Pagination from "react-bootstrap/Pagination";
 
 function Home(){
     const [data, setData] = useState([])
@@ -28,6 +29,7 @@ function Home(){
     { name: 'Enhanced Design', icon: '📐' },
     ];
 
+    // SERVICES DATA
     const serviceDetails = {
      'Electrical BIM & VDC': {
         title: 'Electrical BIM & VDC',
@@ -116,6 +118,87 @@ function Home(){
 
     };
     const [selected, setSelected] = useState('Electrical BIM & VDC');
+
+    const newsData = [
+    [
+        {
+        img: "news1.jpg",
+        category: "Business",
+        title: "Philippine Business Conference and Expo",
+        date: "Aug 22 2025",
+        calendar: "./calendar.png",
+        },
+        {
+        img: "news2.jpg",
+        category: "Milestone",
+        title: "QAT achieves ISO 12345:2025 certification",
+        date: "Aug 22 2025",
+        
+        },
+        {
+        img: "news3.jpg",
+        category: "Business",
+        title: "Building constructions rebounded by 13%",
+        date: "Aug 22 2025",
+        },
+    ],
+
+    [
+        {
+        img: "news4.jpg",
+        category: "Technology",
+        title: "AI innovations in the Philippines",
+        date: "Aug 23 2025",
+        },
+        {
+        img: "news5.jpg",
+        category: "Health",
+        title: "New medical devices approved",
+        date: "Aug 24 2025",
+        },
+    ],
+    ];
+
+    //EVENTS DATA
+    const events = [
+    {
+    id: 1,
+    title: "QAT Family Fun Run 2025",
+    date: "Aug 22 2025",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+    img: "https://via.placeholder.com/300x200?text=Fun+Run"
+    },
+    {
+    id: 2,
+    title: "2025 Quarterly Nationwide Earthquake Drill",
+    date: "Aug 22 2025",
+    description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco...",
+    img: "https://via.placeholder.com/300x200?text=Earthquake+Drill"
+    },
+    {
+    id: 3,
+    title: "Tech Innovation Summit 2025",
+    date: "Sep 15 2025",
+    description: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...",
+    img: "https://via.placeholder.com/300x200?text=Tech+Summit"
+    },
+    {
+    id: 4,
+    title: "Annual CSR Tree Planting",
+    date: "Oct 1 2025",
+    description: "Duis aute irure dolor in reprehenderit in voluptate velit esse...",
+    img: "https://via.placeholder.com/300x200?text=Tree+Planting"
+    }
+    ];
+
+    const [currentPage, setCurrentPage] = useState(1);
+    const eventsPerPage = 2;
+
+    const indexOfLast = currentPage * eventsPerPage;
+    const indexOfFirst = indexOfLast - eventsPerPage;
+    const currentEvents = events.slice(indexOfFirst, indexOfLast);
+
+    const totalPages = Math.ceil(events.length / eventsPerPage);
 
     return (
         <>
@@ -225,8 +308,9 @@ function Home(){
                     </div>
                 </div>
             </div>
-
-            <div className="container overflow-hidden">
+            
+            {/* if hardcoded mas mahaba to */}
+            {/* <div className="container overflow-hidden">
                 <div className="row gy-3 gy-lg-0 gx-xxl-5 mb-5 mt-3">
 
                     <article className="col-12 col-lg-4">
@@ -320,10 +404,82 @@ function Home(){
                         </div>
                     </article>
                 </div>
+            </div> */}
+
+            
+            {/* Carousel */}
+            <div id="news" className="carousel slide" data-bs-ride="carousel">
+            <div className="carousel-inner">
+            {newsData.map((slide, slideIndex) => (
+            <div
+            key={slideIndex}
+            className={`carousel-item ${slideIndex === 0 ? "active" : ""}`}
+            >
+            <div className="row text-start">
+            {slide.map((item, idx) => (
+                <div className="col-md-4 mb-3" key={idx}>
+                <div className="card shadow-sm h-100">
+                    <img
+                    src={item.img}
+                    className="card-img-top"
+                    alt={item.title}
+                    />
+                    <div className="card-body">
+                    <h6 className="text-primary">{item.category}</h6>
+                    <h5 className="card-title">{item.title}</h5>
+
+                    {/* If calendar icon exists, show it beside date */}
+                    {item.calendar ? (
+                        <div>
+                        <img
+                            src={item.calendar}
+                            className="img-fluid"
+                            alt="calendar"
+                            style={{ width: "16px", height: "16px" }}
+                        />
+                        <span className="ms-2 fs-7">{item.date}</span>
+                        </div>
+                    ) : (
+                        <p className="text-muted mb-0">{item.date}</p>
+                    )}
+                    </div>
+                </div>
+                </div>
+            ))}
             </div>
+            </div>
+            ))}
+            </div>
+            </div>
+
+            {/* External Controls */}
+            <div className="d-flex justify-content-between mt-3">
+            <button
+            className="btn btn-outline-primary"
+            type="button"
+            data-bs-target="#news"
+            data-bs-slide="prev"
+            >
+            ◀ Prev
+            </button>
+            <button
+            className="btn btn-outline-primary"
+            type="button"
+            data-bs-target="#news"
+            data-bs-slide="next"
+            >
+            Next ▶
+            </button>
+            </div>
+            
+            
             </section>
 
+
+
+
         {/* LATEST EVENTS */}
+          
             <section className='events container pb-5 bg'>
                 <h3 className='mb-4 fw-bold'>Latest Events</h3>
 
@@ -480,6 +636,47 @@ function Home(){
                         </div>
                     </div>
                 </event>
+            </section> 
+            
+            <section className="container my-4">
+            <h2 className="text-center mb-4">Latest Events</h2>
+
+            {currentEvents.map((event) => (
+                <div className="card mb-4" key={event.id}>
+                <div className="row g-0">
+                    <div className="col-md-4">
+                    <img src={event.img} className="img-fluid rounded-start" alt={event.title} />
+                    </div>
+                    <div className="col-md-8">
+                    <div className="card-body">
+                        <h5 className="card-title">{event.title}</h5>
+                        <h6 className="card-subtitle mb-2 text-muted">{event.date}</h6>
+                        <p className="card-text">{event.description}</p>
+                        <a href="#" className="btn btn-primary">Learn more</a>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            ))}
+
+            {/* Bootstrap Pagination */}
+            <nav className="d-flex justify-content-end">
+                <ul className="pagination">
+                {[...Array(totalPages)].map((_, index) => (
+                    <li
+                    key={index + 1}
+                    className={`page-item ${currentPage === index + 1 ? "active" : ""}`}
+                    >
+                    <button
+                        className="page-link"
+                        onClick={() => setCurrentPage(index + 1)}
+                    >
+                        {index + 1}
+                    </button>
+                    </li>
+                ))}
+                </ul>
+            </nav>
             </section>
         <Footer />
         </>
