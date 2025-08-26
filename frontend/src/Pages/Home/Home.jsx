@@ -3,12 +3,11 @@ import { useEffect, useState } from 'react';
 import Footer from '../../Components/Footer';
 import Navbar from '../../Components/Navbar';
 import './home.css';
-// import Pagination from "react-bootstrap/Pagination";
 
 function Home(){
     const [data, setData] = useState([])
     useEffect(()=>{
-        axios.get('http://localhost:5173/')
+        axios.get('http://localhost:8081/')
         .then(res => setData(res.data))
         .catch(err => console.log('error'));
     },[])
@@ -31,11 +30,14 @@ function Home(){
     ];
 
     // SERVICES RIGHT PANEL DATA
+    const [selected, setSelected] = useState('Electrical BIM & VDC');
     const serviceDetails = {
      'Electrical BIM & VDC': {
         title: 'Electrical BIM & VDC',
         description:
-        'A comprehensive service targeting electrical contractors and project teams to streamline design and construction workflows using Building Information Modeling (BIM) and Virtual Design and Construction (VDC) technologies.',
+        `A comprehensive service targeting electrical contractors and project teams to
+        streamline design and construction workflows using Building Information Modeling
+        (BIM) and Virtual Design and Construction (VDC) technologies.`,
         points: [
         '3D Electrical Model Creation & Coordination',
         'Clash Detection & Resolution',
@@ -47,7 +49,8 @@ function Home(){
     'Mechanical & Plumbing': {
         title: 'Mechanical & Plumbing',
         description:
-        'Focused on delivering precise mechanical and plumbing system models to enhance project accuracy and coordination, from design through to installation.',
+        `Focused on delivering precise mechanical and plumbing system models to
+        enhance project accuracy and coordination, from design through to installation.`,
         points: [
         'Pipe Routing & Equipment Layout Optimization',
         'Integration with HVAC and Fire Protection Systems',
@@ -58,7 +61,9 @@ function Home(){
     'Civil Underground': {
         title: 'Civil Underground',
         description:
-        'Providing expert modeling and coordination services for underground civil infrastructure, ensuring smooth integration with other site disciplines and adherence to project specifications.',
+        `Providing expert modeling and coordination services for
+        underground civil infrastructure, ensuring smooth integration
+        with other site disciplines and adherence to project specifications.`,
         points: [
         'Underground Utility Modeling & Coordination',
         'Geotechnical Data Incorporation',
@@ -69,7 +74,9 @@ function Home(){
     'Concrete BIM & VDC': {
         title: 'Concrete BIM & VDC',
         description:
-        'Specialized BIM and VDC services tailored to concrete contractors and structural teams, designed to improve constructability and project delivery through detailed concrete modeling.',
+        `Specialized BIM and VDC services tailored to concrete contractors
+        and structural teams, designed to improve constructability and project
+        delivery through detailed concrete modeling.`,
         points: [
         'Rebar Detailing & Placement Modeling',
         'Concrete Pour Sequencing & Planning',
@@ -82,7 +89,9 @@ function Home(){
     'VDC Coordination Management': {
         title: 'VDC Coordination Management',
         description:
-        'A centralized service providing comprehensive coordination management for all trades and disciplines, bridging communication gaps to ensure project milestones are met with efficiency.',
+        `A centralized service providing comprehensive coordination
+        management for all trades and disciplines, bridging communication
+        gaps to ensure project milestones are met with efficiency.`,
        points: [
         'Multi-Discipline Model Coordination',
         'Clash Detection & Issue Tracking',
@@ -95,7 +104,9 @@ function Home(){
     'Onsite Quality Control': {
         title: 'Onsite Quality Control',
         description:
-        'Focused on supporting construction quality assurance through digital tools, onsite inspections, and real-time data collection to help reduce rework and maintain project standards.',
+        `Focused on supporting construction quality assurance through
+        digital tools, onsite inspections, and real-time data collection
+        to help reduce rework and maintain project standards.`,
         points: [
         'Field Data Collection & Reporting',
         'Integration with BIM for Visual Inspections',
@@ -107,7 +118,9 @@ function Home(){
     'Enhanced Design': {
         title: 'Enhanced Design',
         description:
-        'A service specifically tailored for owners and developers. We help bridge the gap between design and construction by leveraging our proprietary process and vast experience in preconstruction.',
+        `A service specifically tailored for owners and developers.
+        We help bridge the gap between design and construction by
+        leveraging our proprietary process and vast experience in preconstruction.`,
         points: [
         'Digital Execution & Governance Planning',
         'Validate & Optimize System Distribution',
@@ -118,8 +131,7 @@ function Home(){
     },
 
     };
-    const [selected, setSelected] = useState('Electrical BIM & VDC');
-
+    
     //NEWS DATA
     const newsData = [
     // FIRST PAGE
@@ -175,12 +187,16 @@ function Home(){
 
     //EVENTS DATA 
     const [selectedEvent, setSelectedEvent] = useState();
+
     const events = [
     {
     id: 1,
     title: "QAT Family Fun Run 2025",
     date: "Aug 22 2025",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+    caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco`,
     img: "./events/event1.webp",
     calendar: "./calendar.png"
     },
@@ -188,7 +204,10 @@ function Home(){
     id: 2,
     title: "2025 Quarterly Nationwide Earthquake Drill",
     date: "Aug 22 2025",
-    description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco...",
+    caption: "Ut enim ad minim veniam, quis nostrud exercitation ullamco...",
+    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco`,
     img: "./events/event2.webp",
     calendar: "./calendar.png"
     },
@@ -196,7 +215,10 @@ function Home(){
     id: 3,
     title: "Tech Innovation Summit 2025",
     date: "Sep 15 2025",
-    description: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...",
+    caption: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...",
+    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco`,
     img: "./events/event2.webp",
     calendar: "./calendar.png"
     },
@@ -204,7 +226,10 @@ function Home(){
     id: 4,
     title: "Annual CSR Tree Planting",
     date: "Oct 1 2025",
-    description: "Duis aute irure dolor in reprehenderit in voluptate velit esse...",
+    caption: "Duis aute irure dolor in reprehenderit in voluptate velit esse...",
+    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco`,
     img: "./events/event1.webp",
     calendar: "./calendar.png"
     }
@@ -391,13 +416,13 @@ function Home(){
                             <h2 className="card-title">{event.title}</h2>
                             <img className ='img-fluid'src={event.calendar}/>
                             <span className="card-subtitle fw-bold text-muted ms-2 fs-7">{event.date}</span>
-                            <p className="card-text">{event.description}</p>
+                            <p className="card-text">{event.caption}</p>
                             <button 
                                 type='button' 
                                 className='btn btn-primary' 
                                 data-bs-toggle='modal' 
                                 data-bs-target='#event'
-                                onClick={() => setSelectedEvent=(event)} >
+                                onClick={() => setSelectedEvent(event)} >
                                 Learn more
                             </button>
                         </div>
@@ -405,22 +430,25 @@ function Home(){
                     </div>
                 </div>
             ))}
-            {/* POP-UPS */}
+           
                 <div className="modal fade" id="event" tabIndex="-1" role="dialog" aria-labelledby="event" aria-hidden="true">
                     <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
                         <div className="modal-content">
                             {selectedEvent && (
+<<<<<<< HEAD
                                 <>
+=======
+                            <>
+                                
+>>>>>>> c2a06c14904cab2ba71a18e23b801f121be164c0
                                 <div className="modal-header">
-                                    <h5 className="modal-title">{selectedEvent.title}</h5>
-                                    <button type='button' className="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                                    Close
-                                    </button>
+                                    <h6 className="modal-title">{selectedEvent.title}</h6>
+                                    <button type='button' className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
 
                                 <div className="modal-body">
                                     <div className="row text-justified">
-                                        <img src='./events/event1.webp' className='img-fluid'/>
+                                        <img src={selectedEvent.img} className='img-fluid'/>
                                         <div className='mb-md-3 mb-2'>
                                         <h4 className='text-center mt-md-3 mt-2'>{selectedEvent.title}</h4>
                                         <ul className="entry-meta list-unstyled d-flex align-items-center justify-content-center mb-0">
@@ -450,8 +478,6 @@ function Home(){
                         </div>
                     </div>
                 </div>
-            
-            
             
             <nav className="d-flex justify-content-end">
                 <ul className="pagination">
