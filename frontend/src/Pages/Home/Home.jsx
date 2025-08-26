@@ -19,6 +19,7 @@ function Home(){
     { number: '70+', label: 'Trusted companies' },
     ];
     
+    //SERVICES LEFT PANEL
     const services = [
     { name: 'Electrical BIM & VDC', icon: '⚙️' },
     { name: 'Mechanical & Plumbing', icon: '🚰' },
@@ -29,7 +30,7 @@ function Home(){
     { name: 'Enhanced Design', icon: '📐' },
     ];
 
-    // SERVICES DATA
+    // SERVICES RIGHT PANEL DATA
     const serviceDetails = {
      'Electrical BIM & VDC': {
         title: 'Electrical BIM & VDC',
@@ -172,7 +173,8 @@ function Home(){
     ],
     ];
 
-    //EVENTS DATA
+    //EVENTS DATA 
+    const [selectedEvent, setSelectedEvent] = useState();
     const events = [
     {
     id: 1,
@@ -207,6 +209,7 @@ function Home(){
     calendar: "./calendar.png"
     }
     ];
+   
 
     //FOR EVENTS PAGINATION
     const [currentPage, setCurrentPage] = useState(1);
@@ -389,20 +392,30 @@ function Home(){
                             <img className ='img-fluid'src={event.calendar}/>
                             <span className="card-subtitle fw-bold text-muted ms-2 fs-7">{event.date}</span>
                             <p className="card-text">{event.description}</p>
-                            <button type='button' className='btn btn-primary' data-bs-toggle='modal' data-bs-target='#event'>Learn more</button>
+                            <button 
+                                type='button' 
+                                className='btn btn-primary' 
+                                data-bs-toggle='modal' 
+                                data-bs-target='#event'
+                                onClick={() => setSelectedEvent=(event)} >
+                                Learn more
+                            </button>
                         </div>
                         </div>
                     </div>
-                    
-                    {/* POP-UPS */}
-                    <div className="modal fade" id="event" tabIndex="-1" role="dialog" aria-labelledby="event" aria-hidden="true">
-                        <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
-                            <div className="modal-content">
+                </div>
+            ))}
+            {/* POP-UPS */}
+                <div className="modal fade" id="event" tabIndex="-1" role="dialog" aria-labelledby="event" aria-hidden="true">
+                    <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+                        <div className="modal-content">
+                            {selectedEvent && (
+                                <>
                                 
                                 <div className="modal-header">
-                                    <h5 className="modal-title" id="label">{event.title}</h5>
-                                    <button className="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true"></span>
+                                    <h5 className="modal-title">{selectedEvent.title}</h5>
+                                    <button type='button' className="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                    Close
                                     </button>
                                 </div>
 
@@ -410,12 +423,12 @@ function Home(){
                                     <div className="row text-justified">
                                         <img src='./events/event1.webp' className='img-fluid'/>
                                         <div className='mb-md-3 mb-2'>
-                                        <h4 className='text-center mt-md-3 mt-2'>{event.title}</h4>
+                                        <h4 className='text-center mt-md-3 mt-2'>{selectedEvent.title}</h4>
                                         <ul className="entry-meta list-unstyled d-flex align-items-center justify-content-center mb-0">
                                             <li>
                                                 <a className="fs-7 text-secondary text-decoration-none d-flex align-items-center">
-                                            <img src='./calendar.png' className='img-fluid'/>
-                                                <span className="ms-2 fs-7">Aug 22 2025</span>
+                                                <img src='./calendar.png' className='img-fluid'/>
+                                                <span className="ms-2 fs-7">{selectedEvent.date}</span>
                                                 </a>
                                             </li>
                                         </ul>
@@ -433,11 +446,12 @@ function Home(){
                                     <button type="button" className="btn btn-primary" data-bs-dismiss="modal">Close</button>
                                 </div>
 
-                            </div>
+                            </>
+                            )}
                         </div>
                     </div>
                 </div>
-            ))}
+            
             
             
             <nav className="d-flex justify-content-end">
