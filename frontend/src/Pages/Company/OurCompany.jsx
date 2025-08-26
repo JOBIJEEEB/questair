@@ -175,7 +175,7 @@ const OurCompany = () => {
           <div className="row d-flex gap-4 mb-4 mx-md-5 mx-2 justify-content-center">
             <div className="col col-md-3 ind">
               <div className="p-5">
-                  <img src="./ind_icon.png" classname ="img-fluid" alt='industrialIcon' />
+                  <img src="./ind_icon.png" className ="img-fluid" alt='industrialIcon' />
                   <div>INDUSTRIAL</div>
               </div>
             </div>

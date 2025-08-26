@@ -8,9 +8,9 @@ import './home.css';
 function Home(){
     const [data, setData] = useState([])
     useEffect(()=>{
-        axios.get('http://localhost:8081/')
+        axios.get('http://localhost:5173/')
         .then(res => setData(res.data))
-        .catch(err => console.log('wer'));
+        .catch(err => console.log('error'));
     },[])
     const stats = [
     { number: '200+', label: 'Employees in 6 offices' },
@@ -119,42 +119,55 @@ function Home(){
     };
     const [selected, setSelected] = useState('Electrical BIM & VDC');
 
+    //NEWS DATA
     const newsData = [
+    // FIRST PAGE
     [
         {
-        img: "news1.jpg",
+        img: "./news/business.jpg",
         category: "Business",
         title: "Philippine Business Conference and Expo",
         date: "Aug 22 2025",
         calendar: "./calendar.png",
         },
         {
-        img: "news2.jpg",
+        img: "./news/tech.jpg",
         category: "Milestone",
         title: "QAT achieves ISO 12345:2025 certification",
         date: "Aug 22 2025",
-        
+        calendar: "./calendar.png",
         },
         {
-        img: "news3.jpg",
+        img: "./news/3.jpg",
         category: "Business",
         title: "Building constructions rebounded by 13%",
         date: "Aug 22 2025",
+        calendar: "./calendar.png",
         },
     ],
 
+    // SECOND PAGE
     [
         {
-        img: "news4.jpg",
+        img: "./news/ai.jpg",
         category: "Technology",
-        title: "AI innovations in the Philippines",
+        title: "AI Trends and Innovations in the Philippines 2025",
         date: "Aug 23 2025",
+        calendar: "./calendar.png",
         },
         {
-        img: "news5.jpg",
-        category: "Health",
-        title: "New medical devices approved",
-        date: "Aug 24 2025",
+        img: "./news/ai.jpg",
+        category: "Technology",
+        title: "AI Trends and Innovations in the Philippines 2025",
+        date: "Aug 23 2025",
+        calendar: "./calendar.png",
+        },
+        {
+        img: "./news/ai.jpg",
+        category: "Technology",
+        title: "AI Trends and Innovations in the Philippines 2025",
+        date: "Aug 23 2025",
+        calendar: "./calendar.png",
         },
     ],
     ];
@@ -166,31 +179,36 @@ function Home(){
     title: "QAT Family Fun Run 2025",
     date: "Aug 22 2025",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
-    img: "https://via.placeholder.com/300x200?text=Fun+Run"
+    img: "./events/event1.webp",
+    calendar: "./calendar.png"
     },
     {
     id: 2,
     title: "2025 Quarterly Nationwide Earthquake Drill",
     date: "Aug 22 2025",
     description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco...",
-    img: "https://via.placeholder.com/300x200?text=Earthquake+Drill"
+    img: "./events/event2.webp",
+    calendar: "./calendar.png"
     },
     {
     id: 3,
     title: "Tech Innovation Summit 2025",
     date: "Sep 15 2025",
     description: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...",
-    img: "https://via.placeholder.com/300x200?text=Tech+Summit"
+    img: "./events/event2.webp",
+    calendar: "./calendar.png"
     },
     {
     id: 4,
     title: "Annual CSR Tree Planting",
     date: "Oct 1 2025",
     description: "Duis aute irure dolor in reprehenderit in voluptate velit esse...",
-    img: "https://via.placeholder.com/300x200?text=Tree+Planting"
+    img: "./events/event1.webp",
+    calendar: "./calendar.png"
     }
     ];
 
+    //FOR EVENTS PAGINATION
     const [currentPage, setCurrentPage] = useState(1);
     const eventsPerPage = 2;
 
@@ -202,7 +220,6 @@ function Home(){
 
     return (
         <>
-        
         <Navbar />
         {/* HERO SECTION */}
             <section className="container-fluid px-5 py-5 bg1">
@@ -299,367 +316,130 @@ function Home(){
             </section>
             
         {/* LATEST NEWS */}
-            <section className="news container py-5">
+            <section className="news container py-md-5 p-md-0">
             <div className="container">
                 <div className="row justify-content-md-center">
                     <div className="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
                         <h3 className="mb-4 fw-bold text-center">Latest News</h3>
-                        {/* <p className="mb-4 text-center text-muted">Stay informed with our recent news and events.</p> */}
                     </div>
                 </div>
             </div>
             
-            {/* if hardcoded mas mahaba to */}
-            {/* <div className="container overflow-hidden">
-                <div className="row gy-3 gy-lg-0 gx-xxl-5 mb-5 mt-3">
-
-                    <article className="col-12 col-lg-4">
-                        <div className='card p-4'>
-                        <figure className="rounded mb-3">
-                            <a href="">
-                                <img className="img-fluid"  src="./news/business.jpg" alt="Business" />
-                            </a>
-                        </figure>
-                        <div className="entry-header mb-3">
-                            <ul className="entry-meta list-unstyled d-flex mb-2">
-                            <li>
-                                <a className="link-primary text-decoration-none" href="">Business</a>
-                            </li>
-                            </ul>
-                            <h2 className="entry-title h4 mb-0 text-start">
-                            <a className="link-dark text-decoration-none" href="#!">Philippine Business Conference and Expo</a>
-                            </h2>
-                        </div>
-                        <div className="entry-footer">
-                            <ul className="entry-meta list-unstyled d-flex align-items-center mb-0">
-                                <li>
-                                   
-                                    <a className="fs-7 text-secondary text-decoration-none d-flex align-items-center">
-                                   <img src='./calendar.png' className='img-fluid'/>
-                                    <span className="ms-2 fs-7">Aug 22 2025</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        </div>
-                    </article>
-
-                    <article className="col-12 col-lg-4">
-                        <div className='card p-4'>
-                        <figure className="rounded mb-3">
-                            <a href="">
-                                <img className="img-fluid"  src="./news/tech.jpg" alt="ISO" />
-                            </a>
-                        </figure>
-                        <div className="entry-header mb-3">
-                            <ul className="entry-meta list-unstyled d-flex mb-2">
-                            <li>
-                                <a className="link-primary text-decoration-none" href="">Milestone</a>
-                            </li>
-                            </ul>
-                            <h2 className="entry-title h4 mb-0 text-start">
-                            <a className="link-dark text-decoration-none" href="">QAT achieves ISO 12345:2025 certification</a>
-                            </h2>
-                        </div>
-                        <div className="entry-footer">
-                            <ul className="entry-meta list-unstyled d-flex align-items-center mb-0">
-                                <li>
-                                    <a className="fs-7 link-secondary text-decoration-none d-flex align-items-center" href="#!">
-                                    <img src='./calendar.png' className='img-fluid'/>
-                                    <span className="ms-2 fs-7">Aug 22 2025</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        </div>
-                    </article>
-
-                    <article className="col-12 col-lg-4">
-                        <div className='card p-4'>
-                        <figure className="rounded mb-3">
-                            <a href="">
-                                <img className="img-fluid"  src="./news/3.jpg" alt="Business" />
-                            </a>
-                        </figure>
-                        <div className="entry-header mb-3">
-                            <ul className="entry-meta list-unstyled d-flex mb-2">
-                            <li>
-                                <a className="link-primary text-decoration-none" href="">Business</a>
-                            </li>
-                            </ul>
-                            <h2 className="entry-title h4 mb-0 text-start">
-                            <a className="link-dark text-decoration-none" href="">Building constructions rebounded by 13%</a>
-                            </h2>
-                        </div>
-                        <div className="entry-footer">
-                            <ul className="entry-meta list-unstyled d-flex align-items-center mb-0">
-                                <li>
-                                    <a className="fs-7 link-secondary text-decoration-none d-flex align-items-center" href="#!">
-                                    <img src='./calendar.png' className='img-fluid'/>
-                                    <span className="ms-2 fs-7">Aug 22 2025</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        </div>
-                    </article>
-                </div>
-            </div> */}
-
-            
-            {/* Carousel */}
             <div id="news" className="carousel slide" data-bs-ride="carousel">
-            <div className="carousel-inner">
-            {newsData.map((slide, slideIndex) => (
-            <div
-            key={slideIndex}
-            className={`carousel-item ${slideIndex === 0 ? "active" : ""}`}
-            >
-            <div className="row text-start">
-            {slide.map((item, idx) => (
-                <div className="col-md-4 mb-3" key={idx}>
-                <div className="card shadow-sm h-100">
-                    <img
-                    src={item.img}
-                    className="card-img-top"
-                    alt={item.title}
-                    />
-                    <div className="card-body">
-                    <h6 className="text-primary">{item.category}</h6>
-                    <h5 className="card-title">{item.title}</h5>
-
-                    {/* If calendar icon exists, show it beside date */}
-                    {item.calendar ? (
-                        <div>
+                <div className="carousel-inner">
+                {newsData.map((slide, slideIndex) => (
+                <div key={slideIndex} className={`carousel-item ${slideIndex === 0 ? "active" : ""}`}>
+                <div className="row text-start justify-content-center">
+                {slide.map((item, idx) => (
+                    <div className="col-md-4 col-10 my-3" key={idx}>
+                    <div className="card shadow-sm h-100">
                         <img
-                            src={item.calendar}
-                            className="img-fluid"
-                            alt="calendar"
-                            style={{ width: "16px", height: "16px" }}
+                        src={item.img}
+                        className="card-img-top"
+                        alt={item.title}
                         />
-                        <span className="ms-2 fs-7">{item.date}</span>
+                        <div className="card-body">
+                        <h6 className="text-primary">{item.category}</h6>
+                        <h5 className="card-title">{item.title}</h5>
+
+                        {item.calendar ? (
+                            <div>
+                            <img
+                                src={item.calendar}
+                                className="img-fluid"
+                                alt="calendar"
+                                style={{ width: "16px", height: "16px" }}
+                            />
+                            <span className="ms-2 fs-7">{item.date}</span>
+                            </div>
+                        ) : (
+                            <p className="text-muted mb-0">{item.date}</p>
+                        )}
                         </div>
-                    ) : (
-                        <p className="text-muted mb-0">{item.date}</p>
-                    )}
                     </div>
+                    </div>
+                ))}
                 </div>
                 </div>
-            ))}
-            </div>
-            </div>
-            ))}
-            </div>
+                ))}
+                </div>
             </div>
 
-            {/* External Controls */}
-            <div className="d-flex justify-content-between mt-3">
-            <button
-            className="btn btn-outline-primary"
-            type="button"
-            data-bs-target="#news"
-            data-bs-slide="prev"
-            >
-            ◀ Prev
-            </button>
-            <button
-            className="btn btn-outline-primary"
-            type="button"
-            data-bs-target="#news"
-            data-bs-slide="next"
-            >
-            Next ▶
-            </button>
+            <div className="d-flex justify-content-md-between justify-content-center gap-md-0 gap-4 mt-2">
+                <button className="btn btn-outline-primary" type="button" data-bs-target="#news" data-bs-slide="prev" > ◀ Prev </button>
+                <button className="btn btn-outline-primary" type="button" data-bs-target="#news" data-bs-slide="next" > Next ▶ </button>
             </div>
             
             
             </section>
 
-
-
-
         {/* LATEST EVENTS */}
-          
-            <section className='events container pb-5 bg'>
-                <h3 className='mb-4 fw-bold'>Latest Events</h3>
-
-                <event className="event row border rounded-4 mb-5 align-items-center justify-content-center mx-md-0 mx-3">
-                    <div className="col-md-4 col-12">
-                        <div className="bg-white m-4">
-                            <img src='./events/event1.webp' className='img-fluid rounded-2'/>
-                        </div>
-                    </div>
-                    <div className="col-md-8 text-md-start">
-                        <div className="fw-bold row">
-                            <h2>
-                                QAT Family Fun Run 2025
-                            </h2>
-                            <ul className="entry-meta list-unstyled d-flex align-items-center justify-content-md-start justify-content-center mb-0">
-                                <li>
-                                    <a className="fs-7 text-secondary text-decoration-none d-flex align-items-center">
-                                    <img src='./calendar.png' className='img-fluid'/>
-                                    <span className="ms-2 fs-7">Aug 22 2025</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="text-muted row mt-1 d-none d-md-block">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            </p>
-                        </div>
-
-                        {/* POP-UP */}
-                        <div className="row mt-md-0 mt-3 mb-md-0 mb-4">
-                            <div className="col-md-4">
-                                <button type='button' className='btn btn-primary' data-bs-toggle='modal' data-bs-target='#event1'>Learn more</button>
-                            </div>
-
-                            <div class="modal fade" id="event1" tabindex="-1" role="dialog" aria-labelledby="event1" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="label">Event Details</h5>
-                                            <button className="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true"></span>
-                                            </button>
-                                        </div>
-
-                                        <div class="modal-body">
-                                            <div className="row text-justified">
-                                                <img src='./events/event1.webp' className='img-fluid'/>
-                                                <div className='mb-md-3 mb-2'>
-                                                 <h4 className='text-center mt-md-3 mt-2'>QAT Family Fun Run 2025</h4>
-                                                 <ul className="entry-meta list-unstyled d-flex align-items-center justify-content-center mb-0">
-                                                    <li>
-                                                        <a className="fs-7 text-secondary text-decoration-none d-flex align-items-center">
-                                                    <img src='./calendar.png' className='img-fluid'/>
-                                                        <span className="ms-2 fs-7">Aug 22 2025</span>
-                                                        </a>
-                                                    </li>
-                                                 </ul>
-                                                </div>
-                                                
-                                                <p className='text-center'>
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                                </p>
-                                            </div>
-                                        </div>
-
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </event>
-
-                <event className="event row border rounded-4 mb-5 align-items-center justify-content-center mx-md-0 mx-3">
-                    <div className="col-md-4 col-12">
-                        <div className="bg-white m-4">
-                            <img src='./events/event2.webp' className='img-fluid rounded-2'/>
-                        </div>
-                    </div>
-                    <div className="col-md-8 text-md-start">
-                        <div className="fw-bold row">
-                            <h2>
-                                2025 Quarterly Nationwide Simultaneous Earthquake Drill
-                            </h2>
-                            <ul className="entry-meta list-unstyled d-flex align-items-center justify-content-md-start justify-content-center mb-0">
-                                <li>
-                                    <a className="fs-7 text-secondary text-decoration-none d-flex align-items-center">
-                                    <img src='./calendar.png' className='img-fluid'/>
-                                    <span className="ms-2 fs-7">Aug 22 2025</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="text-muted row mt-1 d-none d-md-block">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            </p>
-                        </div>
-
-                        {/* POP-UP */}
-                        <div className="row mt-md-0 mt-3 mb-md-0 mb-4">
-                            <div className="col-md-4">
-                                <button type='button' className='btn btn-primary' data-bs-toggle='modal' data-bs-target='#event2'>Learn more</button>
-                            </div>
-
-                            <div class="modal fade" id="event2" tabindex="-1" role="dialog" aria-labelledby="event2" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="label">Event Details</h5>
-                                            <button className="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true"></span>
-                                            </button>
-                                        </div>
-
-                                        <div class="modal-body">
-                                            <div className="row text-justified">
-                                                <img src='./events/event2.webp' className='img-fluid'/>
-                                                <div className='mb-md-3 mb-2'>
-                                                 <h4 className='text-center mt-md-3 mt-2'>2025 Quarterly Nationwide Simultaneous Earthquake Drill</h4>
-                                                 <ul className="entry-meta list-unstyled d-flex align-items-center justify-content-center mb-0">
-                                                    <li>
-                                                        <a className="fs-7 text-secondary text-decoration-none d-flex align-items-center">
-                                                    <img src='./calendar.png' className='img-fluid'/>
-                                                        <span className="ms-2 fs-7">Aug 22 2025</span>
-                                                        </a>
-                                                    </li>
-                                                 </ul>
-                                                </div>
-                                                
-                                                <p className='text-center'>
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                                </p>
-                                            </div>
-                                        </div>
-
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </event>
-            </section> 
-            
             <section className="container my-4">
-            <h2 className="text-center mb-4">Latest Events</h2>
+            <h3 className="text-center fw-bold mb-4 pt-md-0 pt-5">Latest Events</h3>
 
             {currentEvents.map((event) => (
-                <div className="card mb-4" key={event.id}>
-                <div className="row g-0">
-                    <div className="col-md-4">
-                    <img src={event.img} className="img-fluid rounded-start" alt={event.title} />
+                <div className="card mb-md-4 mb-4 mx-md-0 mx-4" key={event.id}>
+                    <div className="row g-md-4 g-1">
+                        <div className="col-md-4 align-content-center justify-items-center">
+                        <img src={event.img} className="img-fluid rounded-start" alt={event.title} />
+                        </div>
+                        <div className="col-md-8 text-md-start">
+                        <div className="card-body h-100 align-content-center">
+                            <h2 className="card-title">{event.title}</h2>
+                            <img className ='img-fluid'src={event.calendar}/>
+                            <span className="card-subtitle fw-bold text-muted ms-2 fs-7">{event.date}</span>
+                            <p className="card-text">{event.description}</p>
+                            <button type='button' className='btn btn-primary' data-bs-toggle='modal' data-bs-target='#event'>Learn more</button>
+                        </div>
+                        </div>
                     </div>
-                    <div className="col-md-8">
-                    <div className="card-body">
-                        <h5 className="card-title">{event.title}</h5>
-                        <h6 className="card-subtitle mb-2 text-muted">{event.date}</h6>
-                        <p className="card-text">{event.description}</p>
-                        <a href="#" className="btn btn-primary">Learn more</a>
+                    
+                    {/* POP-UPS */}
+                    <div className="modal fade" id="event" tabIndex="-1" role="dialog" aria-labelledby="event" aria-hidden="true">
+                        <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+                            <div className="modal-content">
+                                
+                                <div className="modal-header">
+                                    <h5 className="modal-title" id="label">{event.title}</h5>
+                                    <button className="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true"></span>
+                                    </button>
+                                </div>
+
+                                <div className="modal-body">
+                                    <div className="row text-justified">
+                                        <img src='./events/event1.webp' className='img-fluid'/>
+                                        <div className='mb-md-3 mb-2'>
+                                        <h4 className='text-center mt-md-3 mt-2'>{event.title}</h4>
+                                        <ul className="entry-meta list-unstyled d-flex align-items-center justify-content-center mb-0">
+                                            <li>
+                                                <a className="fs-7 text-secondary text-decoration-none d-flex align-items-center">
+                                            <img src='./calendar.png' className='img-fluid'/>
+                                                <span className="ms-2 fs-7">Aug 22 2025</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        </div>
+                                        
+                                        <p className='text-center'>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                            Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div className="modal-footer">
+                                    <button type="button" className="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
-                    </div>
-                </div>
                 </div>
             ))}
-
-            {/* Bootstrap Pagination */}
+            
+            
             <nav className="d-flex justify-content-end">
                 <ul className="pagination">
                 {[...Array(totalPages)].map((_, index) => (
@@ -677,6 +457,7 @@ function Home(){
                 ))}
                 </ul>
             </nav>
+
             </section>
         <Footer />
         </>

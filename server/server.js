@@ -23,6 +23,6 @@ app.get('/',(req,res) => {
 })
 
 // TO CHECK IF WORKING
-app.listen(8081, ()=>{
+app.listen(5174, ()=>{
     console.log("Listening");
 })

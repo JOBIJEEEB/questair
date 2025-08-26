@@ -1,5 +1,4 @@
-// import { Link } from 'react-router-dom'
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useLayoutEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './navbar.css';
 
@@ -8,15 +7,17 @@ const Navbar = () => {
   const [url, setUrl] = useState(null);
   useEffect(() => {setUrl(location.pathname);}, [location]);
   
+   useLayoutEffect(() => {document.documentElement.scrollTo({ top: 0, left: 0, behavior: "instant" });}, [location.pathname]);
+
   return (
     <>
       <nav className="shadow navbar navbar-dark navbar-expand-lg">
         <div className="container-fluid">
-          <a className="navbar-brand">
-            <Link to="/">
-              <img className='qat_logo' src="./quest-air.png" alt="Logo" />
+       
+            <Link to="/" className='navbar-brand'>
+              <img className='qat_logo' src="./quest-air2.png" alt="Logo" />
             </Link>
-          </a>
+        
               <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
               data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
               aria-expanded="false" aria-label="Toggle navigation">
@@ -62,8 +63,11 @@ const Navbar = () => {
                   </div>
           </div>
         </nav>
+        
     </>
   )
 }
+
+
 
 export default Navbar

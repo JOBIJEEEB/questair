@@ -14,8 +14,8 @@ const OurServices = () => {
         </div>
       </div>
 
-      <div className="container-fluid bg-white mt-0 px-5 pt-4 pb-5">
-        <div className="services row one gap-4 mx-md-5 mx-1 px-md-5 pt-5 justify-content-center">
+      <div className="bg-white mt-0 pt-4 pb-5">
+        <div className="services row one gap-4 mx-md-0 mx-1 px-md-5 px-5 pt-5 justify-content-center">
 
           {/* Air conditioning and Ventilation */}
           <div className="col-md-3 anm">
@@ -72,7 +72,7 @@ const OurServices = () => {
 
         </div>
 
-        <div className="services row two mt-4 gap-4 mx-md-5 mx-1 px-md-5 pb-5 justify-content-center">
+        <div className="services row two mt-4 gap-4 mx-md-0 mx-1 px-md-5 px-5 pb-5 justify-content-center">
 
           {/* Clean room design and Construction */}
           <div className="col-md-3 anm">
