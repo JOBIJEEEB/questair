@@ -411,7 +411,6 @@ function Home(){
                         <div className="modal-content">
                             {selectedEvent && (
                                 <>
-                                
                                 <div className="modal-header">
                                     <h5 className="modal-title">{selectedEvent.title}</h5>
                                     <button type='button' className="btn-close" data-bs-dismiss="modal" aria-label="Close">
