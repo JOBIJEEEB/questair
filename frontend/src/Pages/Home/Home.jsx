@@ -2,6 +2,8 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Footer from '../../Components/Footer';
 import Navbar from '../../Components/Navbar';
+import News from '../Home/News'
+import Events from '../Home/Events'
 import './home.css';
 
 function Home(){
@@ -132,120 +134,6 @@ function Home(){
 
     };
     
-    //NEWS DATA
-    const newsData = [
-    // FIRST PAGE
-    [
-        {
-        img: "./news/business.jpg",
-        category: "Business",
-        title: "Philippine Business Conference and Expo",
-        date: "Aug 22 2025",
-        calendar: "./calendar.png",
-        },
-        {
-        img: "./news/tech.jpg",
-        category: "Milestone",
-        title: "QAT achieves ISO 12345:2025 certification",
-        date: "Aug 22 2025",
-        calendar: "./calendar.png",
-        },
-        {
-        img: "./news/3.jpg",
-        category: "Business",
-        title: "Building constructions rebounded by 13%",
-        date: "Aug 22 2025",
-        calendar: "./calendar.png",
-        },
-    ],
-
-    // SECOND PAGE
-    [
-        {
-        img: "./news/ai.jpg",
-        category: "Technology",
-        title: "AI Trends and Innovations in the Philippines 2025",
-        date: "Aug 23 2025",
-        calendar: "./calendar.png",
-        },
-        {
-        img: "./news/ai.jpg",
-        category: "Technology",
-        title: "AI Trends and Innovations in the Philippines 2025",
-        date: "Aug 23 2025",
-        calendar: "./calendar.png",
-        },
-        {
-        img: "./news/ai.jpg",
-        category: "Technology",
-        title: "AI Trends and Innovations in the Philippines 2025",
-        date: "Aug 23 2025",
-        calendar: "./calendar.png",
-        },
-    ],
-    ];
-
-    //EVENTS DATA 
-    const [selectedEvent, setSelectedEvent] = useState();
-
-    const events = [
-    {
-    id: 1,
-    title: "QAT Family Fun Run 2025",
-    date: "Aug 22 2025",
-    caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco`,
-    img: "./events/event1.webp",
-    calendar: "./calendar.png"
-    },
-    {
-    id: 2,
-    title: "2025 Quarterly Nationwide Earthquake Drill",
-    date: "Aug 22 2025",
-    caption: "Ut enim ad minim veniam, quis nostrud exercitation ullamco...",
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco`,
-    img: "./events/event2.webp",
-    calendar: "./calendar.png"
-    },
-    {
-    id: 3,
-    title: "Tech Innovation Summit 2025",
-    date: "Sep 15 2025",
-    caption: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...",
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco`,
-    img: "./events/event2.webp",
-    calendar: "./calendar.png"
-    },
-    {
-    id: 4,
-    title: "Annual CSR Tree Planting",
-    date: "Oct 1 2025",
-    caption: "Duis aute irure dolor in reprehenderit in voluptate velit esse...",
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco`,
-    img: "./events/event1.webp",
-    calendar: "./calendar.png"
-    }
-    ];
-   
-
-    //FOR EVENTS PAGINATION
-    const [currentPage, setCurrentPage] = useState(1);
-    const eventsPerPage = 2;
-
-    const indexOfLast = currentPage * eventsPerPage;
-    const indexOfFirst = indexOfLast - eventsPerPage;
-    const currentEvents = events.slice(indexOfFirst, indexOfLast);
-
-    const totalPages = Math.ceil(events.length / eventsPerPage);
-
     return (
         <>
         <Navbar />
@@ -308,8 +196,7 @@ function Home(){
                                 key={service.name}
                                 type="button"
                                 className={`list-group-item list-group-item-action ${selected === service.name ? 'active' : ''}`}
-                                onClick={() => setSelected(service.name)}
-                            >
+                                onClick={() => setSelected(service.name)}>
                                 <span className="me-2">{service.icon}</span>
                                 {service.name}
                             </button>
@@ -319,185 +206,31 @@ function Home(){
 
                     {/* Right content */}
                     <div className="col-md-8">
-                    <div className="card shadow">
-                        <img
-                        src={serviceDetails[selected]?.image}
-                        className="card-img-top services-img"
-                        alt={selected}
-                        />
-                        <div className="card-body text-start">
-                        <h4 className="card-title fw-bold">{serviceDetails[selected]?.title}</h4>
-                        <p className="card-text">{serviceDetails[selected]?.description}</p>
-                        <ul className="list-unstyled">
-                            {serviceDetails[selected]?.points?.map((point, idx) => (
-                            <li key={idx} className="mb-1">
-                                <span className="text-success me-2">☑️</span>
-                                {point}
-                            </li>
-                            ))}
-                        </ul>
-                        <a href="#" className="btn btn-primary">Learn More</a>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-            </section>
-            
-        {/* LATEST NEWS */}
-            <section className="news container py-md-5 p-md-0">
-            <div className="container">
-                <div className="row justify-content-md-center">
-                    <div className="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
-                        <h3 className="mb-4 fw-bold text-center">Latest News</h3>
-                    </div>
-                </div>
-            </div>
-            
-            <div id="news" className="carousel slide" data-bs-ride="carousel">
-                <div className="carousel-inner">
-                {newsData.map((slide, slideIndex) => (
-                <div key={slideIndex} className={`carousel-item ${slideIndex === 0 ? "active" : ""}`}>
-                <div className="row text-start justify-content-center">
-                {slide.map((item, idx) => (
-                    <div className="col-md-4 col-10 my-3" key={idx}>
-                    <div className="card shadow-sm h-100">
-                        <img
-                        src={item.img}
-                        className="card-img-top"
-                        alt={item.title}
-                        />
-                        <div className="card-body">
-                        <h6 className="text-primary">{item.category}</h6>
-                        <h5 className="card-title">{item.title}</h5>
-
-                        {item.calendar ? (
-                            <div>
+                        <div className="card shadow">
                             <img
-                                src={item.calendar}
-                                className="img-fluid"
-                                alt="calendar"
-                                style={{ width: "16px", height: "16px" }}
+                            src={serviceDetails[selected]?.image}
+                            className="card-img-top services-img"
+                            alt={selected}
                             />
-                            <span className="ms-2 fs-7">{item.date}</span>
+                            <div className="card-body text-start">
+                            <h4 className="card-title fw-bold">{serviceDetails[selected]?.title}</h4>
+                            <p className="card-text">{serviceDetails[selected]?.description}</p>
+                            <ul className="list-unstyled">
+                                {serviceDetails[selected]?.points?.map((point, idx) => (
+                                <li key={idx} className="mb-1">
+                                    <span className="text-success me-2">☑️</span>
+                                    {point}
+                                </li>
+                                ))}
+                            </ul>
+                            <a href="#" className="btn btn-primary">Learn More</a>
                             </div>
-                        ) : (
-                            <p className="text-muted mb-0">{item.date}</p>
-                        )}
                         </div>
                     </div>
-                    </div>
-                ))}
                 </div>
-                </div>
-                ))}
-                </div>
-            </div>
-
-            <div className="d-flex justify-content-md-between justify-content-center gap-md-0 gap-4 mt-2">
-                <button className="btn btn-outline-primary" type="button" data-bs-target="#news" data-bs-slide="prev" > ◀ Prev </button>
-                <button className="btn btn-outline-primary" type="button" data-bs-target="#news" data-bs-slide="next" > Next ▶ </button>
-            </div>
-            
-            
             </section>
-
-        {/* LATEST EVENTS */}
-            <section className="container my-4">
-            <h3 className="text-center fw-bold mb-4 pt-md-0 pt-5">Latest Events</h3>
-
-            {currentEvents.map((event) => (
-                <div className="card mb-md-4 mb-4 mx-md-0 mx-4" key={event.id}>
-                    <div className="row g-md-4 g-1">
-                        <div className="col-md-4 align-content-center justify-items-center">
-                        <img src={event.img} className="img-fluid rounded-start" alt={event.title} />
-                        </div>
-                        <div className="col-md-8 text-md-start">
-                        <div className="card-body h-100 align-content-center">
-                            <h2 className="card-title">{event.title}</h2>
-                            <img className ='img-fluid'src={event.calendar}/>
-                            <span className="card-subtitle fw-bold text-muted ms-2 fs-7">{event.date}</span>
-                            <p className="card-text">{event.caption}</p>
-                            <button 
-                                type='button' 
-                                className='btn btn-primary' 
-                                data-bs-toggle='modal' 
-                                data-bs-target='#event'
-                                onClick={() => setSelectedEvent(event)} >
-                                Learn more
-                            </button>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            ))}
-           
-                <div className="modal fade" id="event" tabIndex="-1" role="dialog" aria-labelledby="event" aria-hidden="true">
-                    <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
-                        <div className="modal-content">
-                            {selectedEvent && (
-<<<<<<< HEAD
-                                <>
-=======
-                            <>
-                                
->>>>>>> c2a06c14904cab2ba71a18e23b801f121be164c0
-                                <div className="modal-header">
-                                    <h6 className="modal-title">{selectedEvent.title}</h6>
-                                    <button type='button' className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-
-                                <div className="modal-body">
-                                    <div className="row text-justified">
-                                        <img src={selectedEvent.img} className='img-fluid'/>
-                                        <div className='mb-md-3 mb-2'>
-                                        <h4 className='text-center mt-md-3 mt-2'>{selectedEvent.title}</h4>
-                                        <ul className="entry-meta list-unstyled d-flex align-items-center justify-content-center mb-0">
-                                            <li>
-                                                <a className="fs-7 text-secondary text-decoration-none d-flex align-items-center">
-                                                <img src='./calendar.png' className='img-fluid'/>
-                                                <span className="ms-2 fs-7">{selectedEvent.date}</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                        </div>
-                                        
-                                        <p className='text-center'>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                            Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div className="modal-footer">
-                                    <button type="button" className="btn btn-primary" data-bs-dismiss="modal">Close</button>
-                                </div>
-
-                            </>
-                            )}
-                        </div>
-                    </div>
-                </div>
-            
-            <nav className="d-flex justify-content-end">
-                <ul className="pagination">
-                {[...Array(totalPages)].map((_, index) => (
-                    <li
-                    key={index + 1}
-                    className={`page-item ${currentPage === index + 1 ? "active" : ""}`}
-                    >
-                    <button
-                        className="page-link"
-                        onClick={() => setCurrentPage(index + 1)}
-                    >
-                        {index + 1}
-                    </button>
-                    </li>
-                ))}
-                </ul>
-            </nav>
-
-            </section>
+        <News />
+        <Events />
         <Footer />
         </>
     )
