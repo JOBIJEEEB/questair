@@ -20,7 +20,7 @@ const Events = () => {
     {
     id: 2,
     title: "2025 Quarterly Nationwide Earthquake Drill",
-    date: "Aug 22 2025",
+    date: "Aug 25 2025",
     caption: "Ut enim ad minim veniam, quis nostrud exercitation ullamco...",
     description: `Earthquake Lorem ipsum dolor sit amet, consectetur adipiscing elit,
     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -49,6 +49,28 @@ const Events = () => {
     Ut enim ad minim veniam, quis nostrud exercitation ullamco`,
     img: "./events/event4.webp",
     calendar: "./calendar.png"
+    },
+     {
+    id: 5,
+    title: "2025 Blood Donation Drive",
+    date: "Oct 7 2025",
+    caption: "Duis aute irure dolor in reprehenderit in voluptate velit esse...",
+    description: `Blood Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco`,
+    img: "./events/event5.jpg",
+    calendar: "./calendar.png"
+    },
+    {
+    id: 6,
+    title: "QAT Team Building 2025",
+    date: "Dec 7 2025",
+    caption: "Duis aute irure dolor in reprehenderit in voluptate velit esse...",
+    description: `Team building Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco`,
+    img: "./events/event6.avif",
+    calendar: "./calendar.png"
     }
     ];
    
@@ -62,8 +84,9 @@ const Events = () => {
     const totalPages = Math.ceil(events.length / eventsPerPage);
   return (
     <>
-        <section className="events container my-4">
-                <h3 className="text-center fw-bold mb-4 pt-md-0 pt-5">Latest Events</h3>
+        <section className="events container my-4 pb-5">
+                <h3 className="text-center fw-bold mb-4 pt-md-1 pt-5 pb-4">Latest Events</h3>
+                
 
                 {currentEvents.map((event) => (
                     <div className="card mb-md-4 mb-4 mx-md-0 mx-4" key={event.id}>
@@ -97,7 +120,7 @@ const Events = () => {
                             <div className="modal-content">
                                 {selectedEvent && (
                                 <>
-                                <div className="modal-header">
+                                <div className="modal-header bg-primary text-white text-start">
                                             <h6 className="modal-title">{selectedEvent.title}</h6>
                                             <button type='button' className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
@@ -106,7 +129,7 @@ const Events = () => {
                                             <div className="row text-justified">
                                                 <img src={selectedEvent.img} className='img-fluid'/>
                                                 <div className='mb-md-3 mb-2'>
-                                                <h4 className='text-center mt-md-3 mt-2'>{selectedEvent.title}</h4>
+                                                <h4 className='text-center mt-md-3 mt-2 fw-bold'>{selectedEvent.title}</h4>
                                                 
                                                 <ul className="entry-meta list-unstyled d-flex align-items-center justify-content-center mb-0">
                                                     <li>
@@ -119,7 +142,6 @@ const Events = () => {
                                                 </ul>
                                                 
                                                 </div>
-                                                
                                                 <p className='events-p p-4'>{selectedEvent.description}</p>
                                             </div>
                                     </div>
@@ -132,37 +154,50 @@ const Events = () => {
                             </div>
                         </div>
                     </div>
-                
-                <nav className="d-flex justify-content-end">
+
+                <nav className="d-flex justify-content-md-end justify-content-center">
                     <ul className="pagination">
-                        <li className="page-item">
-                            <a className="page-link" href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
-                    {[...Array(totalPages)].map((_, index) => (
-                        
-                        <li
-                        key={index + 1}
-                        className={`page-item ${currentPage === index + 1 ? "active" : ""}`}
-                        >
+                        {/* PREV */}
+                        <li className={`page-item ${currentPage === 1 ? "disabled" : ""}`}>
                         <button
                             className="page-link"
-                            onClick={() => setCurrentPage(index + 1)}
+                            aria-label="Previous"
+                            onClick={() => currentPage > 1 && setCurrentPage(currentPage - 1)}
+                            disabled={currentPage === 1}
                         >
-                            {index + 1}
+                            <span aria-hidden="true">&laquo;</span>
                         </button>
                         </li>
-                    ))}
 
-                     <li className="page-item">
-                        <a className="page-link" href="#" aria-label="Next">
+                        {/* CURRENT */}
+                        {[...Array(totalPages)].map((_, index) => (
+                        <li
+                            key={index + 1}
+                            className={`page-item ${currentPage === index + 1 ? "active" : ""}`}
+                        >
+                            <button
+                            className="page-link"
+                            onClick={() => setCurrentPage(index + 1)}
+                            >
+                            {index + 1}
+                            </button>
+                        </li>
+                        ))}
+
+                        {/* NEXT */}
+                        <li className={`page-item ${currentPage === totalPages ? "disabled" : ""}`}>
+                        <button
+                            className="page-link"
+                            aria-label="Next"
+                            onClick={() => currentPage < totalPages && setCurrentPage(currentPage + 1)}
+                            disabled={currentPage === totalPages}
+                        >
                             <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-
+                        </button>
+                        </li>
                     </ul>
                 </nav>
+
 
         </section>
     </>

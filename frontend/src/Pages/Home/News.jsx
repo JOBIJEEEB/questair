@@ -103,83 +103,85 @@ const News = () => {
     ];
   return (
     <>
-        <section className="news container py-md-5 p-md-0">
-        <div className="container">
+        <section className="news container py-md-5 p-md-0 mb-md-4 mb-0">
             <div className="row justify-content-md-center">
                 <div className="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
                     <h3 className="mb-4 fw-bold text-center">Latest News</h3>
                 </div>
             </div>
-        </div>
-        
+
         <div id="news" className="carousel slide" data-bs-ride="carousel">
             <div className="carousel-inner">
             {newsData.map((slide, slideIndex) => (
-            <div key={slideIndex} className={`carousel-item ${slideIndex === 0 ? "active" : ""}`}>
-            <div className="row text-start justify-content-center">
-            {slide.map((item, idx) => (
-                <div className="col-md-4 col-10 my-3" key={idx}>
-                <div className="card">
-                    <div className='news-img-wrapper'>
-                        <img
-                        src={item.img}
-                        className="card-img-top news-img"
-                        alt={item.title}
-                        /> 
-                        
-                        <button 
-                        className="btn border-0 shadow-none overlay d-flex align-items-center justify-content-center" 
-                        data-bs-toggle='modal' 
-                        data-bs-target='#newsModal'
-                        onClick={() => setSelectedNews(item)}
-                        >
-                        <div className="text-center text-white">
-                            <img src ='./eye.png' className='img-fluid eye' /> 
-                            <p>Read More</p>
-                        </div>
-                        </button>
-                    </div>
-                    <div className="card-body">
-                        <h6 className="text-primary">{item.category}</h6>
-                        <h5 className="card-title">{item.title}</h5>
+                <div key={slideIndex} className={`carousel-item ${slideIndex === 0 ? "active" : ""}`}>
+                    <div className="row text-start justify-content-center">
+                        {slide.map((item, idx) => (
+                            <button className="btn border-0 text-start col-md-4 col-10 my-3" key={idx} data-bs-toggle='modal' data-bs-target='#newsModal' onClick={() => setSelectedNews(item)}>
+                            <div className="card">
+                                <div className='news-img-wrapper'>
+                                    <img
+                                    src={item.img}
+                                    className="card-img-top news-img"
+                                    alt={item.title}
+                                    /> 
+                                    
+                                    <button 
+                                    className="btn border-0 shadow-none overlay rounded-0 d-flex align-items-center justify-content-center" 
+                                    data-bs-toggle='modal' 
+                                    data-bs-target='#newsModal'
+                                    onClick={() => setSelectedNews(item)}
+                                    >
+                                    <div className="text-center text-white">
+                                        <img src ='./eye.png' className='img-fluid eye' /> 
+                                        <p>Read More</p>
+                                    </div>
+                                    </button>
 
-                        {item.calendar ? (
-                            <div>
-                            <img
-                                src={item.calendar}
-                                className="img-fluid"
-                                alt="calendar"
-                                style={{ width: "16px", height: "16px" }}
-                            />
-                            <span className="ms-2 fs-7">{item.date}</span>
+                                </div>
+                                <div className="card-body">
+                                    <h6 className="text-primary">{item.category}</h6>
+                                    <h5 className="card-title">{item.title}</h5>
+
+                                    {item.calendar ? (
+                                        <div>
+                                        <img
+                                            src={item.calendar}
+                                            className="img-fluid"
+                                            alt="calendar"
+                                            style={{ width: "16px", height: "16px" }}
+                                        />
+                                        <span className="ms-2 fs-7">{item.date}</span>
+                                        </div>
+                                    ) : (
+                                        <p className="text-muted mb-0">{item.date}</p>
+                                    )}
+                                </div>
                             </div>
-                        ) : (
-                            <p className="text-muted mb-0">{item.date}</p>
-                        )}
+                            
+                            </button>
+                        ))}
                     </div>
                 </div>
-                
-                </div>
             ))}
             </div>
-            </div>
-            ))}
-            </div>
+
+            {/* MODAL */}
             <div className="modal fade" id="newsModal" tabIndex="-1" role="dialog" aria-labelledby="event" aria-hidden="true">
                 <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg" role="document">
                     <div className="modal-content">
                         {selectedNews && (
-                        <>
-                        <div className="modal-header">
-                                    <h6 className="modal-title">{selectedNews.title}</h6>
-                                    <button type='button' className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <>
+                            
+                            <div className="modal-header bg-primary text-white text-start">
+                                <h6 className="modal-title">{selectedNews.title}</h6>
+                                <button type='button' className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
 
                             <div className="modal-body">
-                                    <div className="row text-justified">
-                                        <img src={selectedNews.img} className='img-fluid'/>
+                                    <div className="row">
+                                        <img src={selectedNews.img} className='img-fluid px-3'/>
                                         <div className='mb-md-3 mb-2'>
-                                        <h4 className='text-center mt-md-3 mt-2'>{selectedNews.title}</h4>
+                                        <h4 className='text-center mt-md-3 mt-2 fw-bold'>{selectedNews.title}</h4>
                                         
                                         <ul className="entry-meta list-unstyled d-flex align-items-center justify-content-center mb-0">
                                             <li>
@@ -192,15 +194,15 @@ const News = () => {
                                         </ul>
                                         
                                         </div>
-                                            <p className='news-p p-5'>{selectedNews.description}</p>
+                                            <p className='news-p px-md-5 px-4'>{selectedNews.description}</p>
                                     </div>
                             </div>
 
                             <div className="modal-footer">
                                 <button type="button" className="btn btn-primary" data-bs-dismiss="modal">Close</button>
                             </div>
-                            
-                        </>
+                                
+                            </>
                         )}
                     </div>
                 </div>

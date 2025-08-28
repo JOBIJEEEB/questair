@@ -135,7 +135,7 @@ function Home(){
     };
     
     return (
-        <>
+        <div className='bg-white'>
         <Navbar />
         {/* HERO SECTION */}
             <section className="container-fluid px-5 py-5 bg1">
@@ -232,7 +232,7 @@ function Home(){
         <News />
         <Events />
         <Footer />
-        </>
+        </div>
     )
 }
 
