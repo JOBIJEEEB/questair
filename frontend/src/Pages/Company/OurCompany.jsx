@@ -18,12 +18,12 @@ const OurCompany = () => {
         </div>
       </div>
 
-      {/* VISION MISSION CORE VALUES*/}
+      {/* VISION, MISSION, and CORE VALUES*/}
       <div className="second container-fluid pt-md-5 px-md-2 bg-white">
         <p className="wh-text2 fade-in m-3 pt- d-block d-md-none">
-                    Quest-Air Technology Phils, Inc. (QAT) is dynamic & progressive construction company whose core competencies are in Mechanical Airconditioning & Ventilation, Electrical
-                    Distribution & Ancillaries, Fire Protection Systems & Plumbing Works. We are an acknowledged leader in Cleanroom Design and Construction.
-                </p>
+            Quest-Air Technology Phils, Inc. (QAT) is dynamic & progressive construction company whose core competencies are in Mechanical Airconditioning & Ventilation, Electrical
+            Distribution & Ancillaries, Fire Protection Systems & Plumbing Works. We are an acknowledged leader in Cleanroom Design and Construction.
+        </p>
 
         {/* VISION */}
         <div className="row justify-content-center mb-md-5">
@@ -67,10 +67,7 @@ const OurCompany = () => {
               <div className="col-2 justify-content-center d-flex align-items-center">
                 <img src="./gear.png" alt="Bulb" className="object-fit-contain img-fluid"/>
               </div>
-
             </div>
-             
-              
           </div>
         </div>
 
@@ -127,6 +124,7 @@ const OurCompany = () => {
                     </div>
                   </div>
                 </div>
+                
                 <div className="col-12 col-md-4">
                   <div className="core-values-box">
                     <div className="texts py-md-4 py-0">
